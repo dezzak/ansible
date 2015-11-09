@@ -1,0 +1,15 @@
+---
+
+- name: Ensure that cups is installed
+  apt: name={{ item }} state=present
+  with_items:
+    - cups
+    - cups-client
+  notify:
+    - restart cups
+
+- name: Ensure that cups config is correct
+  template: dest=/etc/cups/cupsd.conf backup=yes src=cupsd.conf.j2
+  notify:
+    - restart cups
+

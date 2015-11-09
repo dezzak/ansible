@@ -1,0 +1,4 @@
+---
+localnet_ipv4_cidr: 192.168.0.0/24
+localnet_ipv6_cidr: '2001:8b0:caf4::/64'
+localnet_ipv6_cidr_s: '[2001:8b0:caf4::]/64'

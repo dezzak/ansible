@@ -5,3 +5,9 @@
   roles:
     - core
 
+- hosts: print-servers
+  become: yes
+  become_method: sudo
+  roles:
+    - print-server
+
