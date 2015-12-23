@@ -1,0 +1,30 @@
+---
+
+- name: Ensure that saned is installed
+  apt: name={{ item }} state=present
+  with_items:
+    - sane-utils
+    - libsane
+    - libsane-extras
+  notify:
+    - restart sane
+
+- name: Ensure fix for epson scanner is applied
+  lineinfile: dest=/etc/sane.d/epson2.conf regexp=^usb line="usb 0x04b8 0x0864"
+  notify:
+    - restart sane
+
+- name: Ensure that saned is in the scanner group
+  user: name=saned append=yes groups=scanner,lp
+  notify:
+    - restart sane
+
+- name: Ensure that saned is enabled
+  lineinfile: dest=/etc/default/saned regexp=^RUN= line=RUN=yes
+  notify:
+    - restart sane
+
+- name: Ensure that saned config is correct
+  template: dest=/etc/sane.d/saned.conf backup=yes src=saned.conf.j2
+  notify:
+    - restart sane

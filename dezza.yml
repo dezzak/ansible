@@ -11,3 +11,9 @@
   roles:
     - print-server
 
+- hosts: scan-servers
+  become: yes
+  become_method: sudo
+  roles:
+    - scan-server
+
