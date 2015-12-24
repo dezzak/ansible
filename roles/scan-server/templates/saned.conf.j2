@@ -22,8 +22,8 @@
 #
 # The hostname matching is not case-sensitive.
 
-192.168.0.0/24
-[2001:8b0:caf4::]/64
+{{ localnet_ipv4_cidr }}
+{{ localnet_ipv6_cidr_s }}
 
 # NOTE: /etc/inetd.conf (or /etc/xinetd.conf) and
 # /etc/services must also be properly configured to start
