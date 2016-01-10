@@ -17,3 +17,8 @@
   roles:
     - scan-server
 
+- hosts: samba-servers
+  become: yes
+  become_method: sudo
+  roles:
+    - { role: yamb00.samba }

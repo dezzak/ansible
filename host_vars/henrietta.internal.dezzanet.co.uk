@@ -1,0 +1,45 @@
+---
+samba:
+  global:
+    workgroup: "DEZZANET"
+    server_string: "%h server"
+    dns_proxy: "no"
+    interfaces: "eth0"
+    max_log_size: "1000"
+    syslog: "0"
+    panic_action: "/usr/share/samba/panic-action %d"
+
+    # Authentication
+    security: "user"
+    encrypt_passwords: "true"
+    passdb_backend: "tdbsam"
+    obey_pam_restrictions: "yes"
+    unix_password_sync: "yes"
+    passwd_program: "/usr/bin/passwd %u"
+    passwd_chat: "*Enter\\snew\\s*\\spassword:* %n\\n *Retype\\snew\\s*\\spassword:* %n\\n *password\\supdated\\ssuccessfully* ."
+    pam_password_change: "yes"
+    map_to_guest: "bad user"
+
+    # Misc
+    usershare_allow_guests: "no"
+
+  shares:
+#    - name: "homes"
+#      comment: "Home Directories"
+#      browseable: "no"
+#      read_only: "yes"
+#      create_mask: "0775"
+#      directory_mas: "0775"
+#      valid_users: "%s"
+
+    - name: "media"
+      comment: "Media"
+      path: "/media/media/media/media"
+      browseable: "yes"
+      guest_ok: "no"
+      writable: "yes"
+      force_user: "nobody"
+      force_group: "media"
+      directory_mask: "0775"
+
+    
