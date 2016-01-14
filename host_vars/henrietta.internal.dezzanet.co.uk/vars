@@ -42,4 +42,8 @@ samba:
       force_group: "media"
       directory_mask: "0775"
 
-    
+transmission:
+  download_dir: "/media/media/media/media/torrents"
+  incomplete_dir: "/media/media/media/media/torrents/incomplete"
+  rpc_password: "{{ vault_transmission_rpc_password }}"
+  rpc_whitelist: "127.0.0.1,{{ localnet_ipv4_wild }},{{ localnet_ipv6_wild }}"
