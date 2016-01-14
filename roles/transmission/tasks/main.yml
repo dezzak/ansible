@@ -1,0 +1,16 @@
+---
+- name: Ensure transmission is installed
+  apt: name={{ item }} state=installed
+  with_items:
+    - transmission-daemon
+    - transmission-cli
+  notify: restart transmission
+
+- name: Ensure transmission config is correct
+  template:
+    src=settings.json.j2
+    dest=/etc/transmission-daemon/settings.json
+    owner=debian-transmission
+    group=debian-transmission
+    mode=0600
+  notify: reload transmission
