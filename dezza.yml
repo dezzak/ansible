@@ -17,15 +17,9 @@
   roles:
     - scan-server
 
-- hosts: samba-servers
+- hosts: media-servers
   become: yes
   become_method: sudo
   roles:
     - { role: yamb00.samba }
-
-- hosts: transmission-servers
-  become: yes
-  become_method: sudo
-  roles:
     - transmission
-
