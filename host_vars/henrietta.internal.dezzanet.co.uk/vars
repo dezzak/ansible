@@ -1,4 +1,5 @@
 ---
+media_root_dir: "/media/media/media/media"
 samba:
   global:
     workgroup: "DEZZANET"
@@ -34,7 +35,7 @@ samba:
 
     - name: "media"
       comment: "Media"
-      path: "/media/media/media/media"
+      path: "{{ media_root_dir }}"
       browseable: "yes"
       guest_ok: "no"
       writable: "yes"
@@ -43,7 +44,7 @@ samba:
       directory_mask: "0775"
 
 transmission:
-  download_dir: "/media/media/media/media/torrents"
-  incomplete_dir: "/media/media/media/media/torrents/incomplete"
+  download_dir: "{{ media_root_dir }}/torrents"
+  incomplete_dir: "{{ media_root_dir }}/torrents/incomplete"
   rpc_password: "{{ vault_transmission_rpc_password }}"
   rpc_whitelist: "127.0.0.1,{{ localnet_ipv4_wild }},{{ localnet_ipv6_wild }}"
