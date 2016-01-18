@@ -48,3 +48,7 @@ transmission:
   incomplete_dir: "{{ media_root_dir }}/torrents/incomplete"
   rpc_password: "{{ vault_transmission_rpc_password }}"
   rpc_whitelist: "127.0.0.1,{{ localnet_ipv4_wild }},{{ localnet_ipv6_wild }}"
+
+flexget:
+  user: dezza
+

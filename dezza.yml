@@ -23,3 +23,5 @@
   roles:
     - { role: yamb00.samba }
     - transmission
+    - flexget
+
