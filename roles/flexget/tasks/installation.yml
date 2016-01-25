@@ -4,6 +4,7 @@
   with_items:
     - python2.7
     - python-pip
+    - python2.7-dev
 
 - name: Ensure that pip is updated
   pip: name=setuptools state=latest
