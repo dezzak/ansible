@@ -2,4 +2,4 @@
 # {{ ansible_managed }}
 SCAN_DIR="{{ clamav.scandir }}"
 LOG_FILE="/var/log/clamav/media_clamscan.log"
-/usr/bin/clamscan -i -r '$SCAN_DIR' >> '$LOG_FILE'
+/usr/bin/clamscan -i -r $SCAN_DIR >> $LOG_FILE
