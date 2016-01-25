@@ -24,4 +24,4 @@
     - { role: yamb00.samba }
     - transmission
     - flexget
-
+    - clamav
