@@ -9,6 +9,9 @@
 - name: Ensure that pip is updated
   pip: name=setuptools state=latest
 
+- name: Ensure that functools32 is installed
+  pip: name=functools32 state=latest
+
 - name: Ensure that flexget is installed
   pip: name=flexget state=latest
   notify: restart flexget
