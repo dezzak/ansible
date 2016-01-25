@@ -9,11 +9,6 @@
 - name: Ensure that pip is updated
   pip: name=setuptools state=latest
 
-# The "testrepository" package is needed for some reason
-# https://ask.openstack.org/en/question/86725/got-an-error-during-installation-of-kilo-error-in-setup-command-error-parsing-optstackkeystonesetupcfg-importerror-no-module-named-testrepository/
-- name: Ensure that testrepository is installed
-  pip: name=testrepository state=present
-
 - name: Ensure that flexget is installed
   pip: name=flexget state=latest
   notify: restart flexget
