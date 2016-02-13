@@ -1,0 +1,27 @@
+---
+
+- name: Ensure that gip dependencies are installed
+  apt: name={{ item }} state=present
+  with_items:
+    - perl
+    - ffmpeg
+    - ffmpeg2theora
+    - libav-tools
+    - libwww-perl
+    - libxml-simple-perl
+    - git
+
+- name: Ensure that gip is latest version
+  git:
+    dest=/usr/local/src/get_iplayer
+    repo='https://github.com/get-iplayer/get_iplayer.git'
+
+- name: Set up symlink
+  file:
+    force=yes
+    group=staff
+    owner=root
+    path=/usr/local/bin/get_iplayer
+    src=/usr/local/src/get_iplayer/get_iplayer
+    state=link
+
