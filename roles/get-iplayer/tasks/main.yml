@@ -25,3 +25,40 @@
     src=/usr/local/src/get_iplayer/get_iplayer
     state=link
 
+- name: Set up lockfile
+  file:
+    group=media
+    owner=root
+    mode=0775
+    path=/var/shutdown_block
+    state=directory
+
+- name: Set up run script
+  template:
+    dest=/usr/local/bin/get_iplayer_run
+    group=staff
+    owner=root
+    mode=0775
+    src=get_iplayer.sh.j2
+
+- name: Set up weekday cron job
+  cron:
+    cron_file=get-iplayer
+    name=weekdays
+    user=dezza
+    minute=*/15
+    hour=2-4
+    dow=1-5
+    state=present
+    job=/usr/local/bin/get_iplayer_run
+
+- name: Set up weekday cron job
+  cron:
+    cron_file=get-iplayer
+    name=weekends
+    user=dezza
+    minute=*/15
+    hour=2-18
+    dow=6,7
+    state=present
+    job=/usr/local/bin/get_iplayer_run
