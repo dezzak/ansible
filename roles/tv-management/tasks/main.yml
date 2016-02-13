@@ -1,0 +1,29 @@
+---
+
+- name: Ensure dependencies are installed
+  apt: name={{ item }} state=present
+  with_items:
+    - perl
+    - git
+
+- name: Ensure tvmanagement is checked out
+  git:
+    dest={{ tv_management.install_dir }}
+    repo='https://github.com/dezzak/tv-management.git'
+
+- name: Ensure config present
+  template:
+    src=tv-management.ini.j2
+    dest=/home/dezza/.tv-management.ini
+    group=dezza
+    owner=dezza
+    mode=0600
+
+- name: Ensure torrent moitor script set up
+  cron:
+    cron_file=tv-management
+    user=dezza
+    minute=*/6
+    state=present
+    job="{{ tv_management.install_dir }}/torrent_monitor.pl"
+    name="torrent monitor"

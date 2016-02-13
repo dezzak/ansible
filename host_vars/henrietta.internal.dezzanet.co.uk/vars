@@ -47,6 +47,7 @@ transmission:
   download_dir: "{{ media_root_dir }}/torrents"
   incomplete_dir: "{{ media_root_dir }}/torrents/incomplete"
   rpc_password: "{{ vault_transmission_rpc_password }}"
+  rpc_password_plain: "{{ vault_transmission_rpc_password_plain }}"
   rpc_whitelist: "127.0.0.1,{{ localnet_ipv4_wild }},{{ localnet_ipv6_wild }}"
 
 flexget:
@@ -55,3 +56,5 @@ flexget:
 clamav:
   scandir: "{{ media_root_dir }}"
 
+tv_management:
+  install_dir: "/usr/local/bin/tv-management"

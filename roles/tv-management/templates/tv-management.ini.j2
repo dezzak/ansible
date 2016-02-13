@@ -1,0 +1,12 @@
+# {{ ansible_managed }}
+base_tv_dir={{ media_root_dir }}/TV
+unwatched_dir={{ media_root_dir }}/unwatched
+tv_manager_path={{ tv_management.install_dir }}/tv-management.pl
+iplayer_dir={{ media_root_dir }}/iplayer
+
+[transmission]
+rpc_url=http://localhost:9091/transmission/rpc
+rpc_username=transmission
+rpc_password={{ transmission.rpc_password_plain }}
+rpc_timeout=5
+
