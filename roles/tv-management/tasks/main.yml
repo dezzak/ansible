@@ -27,3 +27,13 @@
     state=present
     job="{{ tv_management.install_dir }}/torrent_monitor.pl"
     name="torrent monitor"
+
+- name: Ensure iplayer renamer script set up
+  cron:
+    cron_file=tv-management
+    user=dezza
+    minute=*/5
+    state=present
+    job="{{ tv_management.install_dir }}/iplayer_renamer.pl"
+    name="iplayer renamer"
+
