@@ -27,3 +27,9 @@
     - clamav
     - tv-management
     - get-iplayer
+
+- hosts: backup-servers
+  become: yes
+  become_method: sudo
+  roles:
+    - backup-host
