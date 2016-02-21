@@ -16,3 +16,6 @@
     group="{{ item.owner }}"
     mode=0750
   with_items: "{{ backup_dirs }}"
+
+- name: Ensure daily backup scan is setup
+  template: src=backup_clamscan.j2 dest=/etc/cron.daily/backup_clamscan mode=0755

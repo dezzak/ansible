@@ -24,7 +24,6 @@
     - { role: yamb00.samba }
     - transmission
     - flexget
-    - clamav
     - media-clamscan
     - tv-management
     - get-iplayer
