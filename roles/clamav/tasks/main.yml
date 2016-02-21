@@ -5,4 +5,17 @@
   with_items:
     - clamav-freshclam
     - clamav
+    - logrotate
 
+- name: Ensure that freshclam logrote is gone
+  file:
+    path=/etc/logrotate.d/clamav-freshclam
+    state=absent
+
+- name: Add clamav logrotate
+  copy:
+    dest=/etc/logrotate.d/clamav
+    owner=root
+    group=root
+    mode=0644
+    src=logrotate
