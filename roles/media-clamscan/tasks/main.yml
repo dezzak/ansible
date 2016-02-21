@@ -1,0 +1,5 @@
+---
+
+- name: Ensure daily scan is setup
+  template: src=clamscan.j2 dest=/etc/cron.daily/clamscan mode=0755
+

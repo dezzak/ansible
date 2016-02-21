@@ -25,6 +25,7 @@
     - transmission
     - flexget
     - clamav
+    - media-clamscan
     - tv-management
     - get-iplayer
 
