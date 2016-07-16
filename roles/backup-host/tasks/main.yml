@@ -19,3 +19,22 @@
 
 - name: Ensure daily backup scan is setup
   template: src=backup_clamscan.j2 dest=/etc/cron.daily/backup_clamscan mode=0755
+
+- name: Ensure push to s3 script is present
+  copy:
+    dest="/usr/local/bin/push_backups.sh"
+    owner=root
+    group=media
+    mode=0755
+    src="push_backups.sh"
+
+- name: Ensure push cron job is set up
+  cron:
+    cron_file=backups
+    name="push to s3"
+    user=dezza
+    minute=0
+    hour=3
+    state=present
+    job=/usr/local/bin/push_backups.sh
+
