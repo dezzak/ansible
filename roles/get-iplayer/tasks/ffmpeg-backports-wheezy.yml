@@ -1,0 +1,19 @@
+---
+
+- name: Enable wheezy backports
+  apt_repository:
+    repo='deb http://ftp.debian.org/debian wheezy-backports main'
+    state=present
+    update_cache=yes
+
+- name: Ensure no jessie backports
+  apt_repository:
+    repo='deb http://ftp.debian.org/debian jessie-backports main'
+    state=absent
+    update_cache=yes
+
+- name: Install ffmpeg from backports
+  apt:
+    default_release='wheezy-backports'
+    name='ffmpeg'
+    state=present

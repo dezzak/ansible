@@ -1,13 +1,7 @@
 ---
 
-- name: Enable jessie backports
-  apt_repository:
-    repo='deb http://ftp.debian.org/debian jessie-backports main'
-    state=present
-    update_cache=yes
+- include: ffmpeg-backports-jessie.yml
+  when: ansible_distribution_version == '8'
 
-- name: Install ffmpeg from backports
-  apt:
-    default_release='jessie-backports'
-    name='ffmpeg'
-    state=present
+- include: ffmpeg-backports-wheezy.yml
+  when: ansible_distribution_version == '7'
