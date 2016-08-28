@@ -68,6 +68,6 @@ backup_dirs:
     owner: "dezza"
   - dirname: "hqlil1"
     owner: "dezza"
-  - dirname: "kirsty"
-    owner: "kirsty"
+#  - dirname: "kirsty"
+#    owner: "kirsty"
 
