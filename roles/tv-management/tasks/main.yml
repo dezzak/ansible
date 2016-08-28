@@ -8,7 +8,10 @@
     - cpanminus
 
 - name: Ensure cpan dependencies are installed
-  cpanm: name=Config::Tiny
+  cpanm: name={{ item }}
+  with_items:
+    - Config::Tiny
+    - Transmission::Client
 
 - name: Ensure tvmanagement is checked out
   git:
