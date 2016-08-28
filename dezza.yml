@@ -21,6 +21,7 @@
   become: yes
   become_method: sudo
   roles:
+    - media-servers
     - { role: yamb00.samba }
     - transmission
     - flexget

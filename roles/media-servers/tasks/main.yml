@@ -1,0 +1,9 @@
+---
+
+- name: Ensure media group is present
+  group: name=media state=present
+
+- name: Ensure users are in media group
+  user: name={{ item }} groups=media append=yes
+  with_items:
+    "{{ media_users }}"
