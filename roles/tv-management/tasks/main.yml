@@ -5,6 +5,10 @@
   with_items:
     - perl
     - git
+    - cpanminus
+
+- name: Ensure cpan dependencies are installed
+  cpanm: name=Config::Tiny
 
 - name: Ensure tvmanagement is checked out
   git:
