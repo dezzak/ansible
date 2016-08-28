@@ -3,8 +3,16 @@
   apt: name={{ item }} state=installed
   with_items:
     - python2.7
-    - python-pip
+    - python-setuptools
     - python2.7-dev
+
+- name: Ensure that apt pip is gone
+  apt: name={{ item }} state=absent
+  with_items:
+    - python-pip
+
+- name: Ensure pip is installed
+  easy_install: name=pip state=latest
 
 - name: Ensure that pip is updated
   pip: name=setuptools state=latest
