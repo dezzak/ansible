@@ -1,5 +1,5 @@
 ---
-- name: restart saned
+- name: restart sane
   service: name=saned state=restarted
 
 
