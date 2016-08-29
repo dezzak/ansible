@@ -71,3 +71,6 @@ backup_dirs:
 #  - dirname: "kirsty"
 #    owner: "kirsty"
 
+printer_admins:
+  - dezza
+

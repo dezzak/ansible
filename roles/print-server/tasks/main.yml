@@ -1,5 +1,10 @@
 ---
 
+- name: Ensure that printer admins are configured
+  user: name={{ item }} groups=lpadmin append=yes
+  with_items:
+    "{{ printer_admins }}"
+
 - name: Ensure that cups is installed
   apt: name={{ item }} state=present
   with_items:
