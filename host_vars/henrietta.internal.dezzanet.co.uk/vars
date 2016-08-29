@@ -2,6 +2,7 @@
 media_root_dir: "/media/media/media/media"
 media_users:
   - dezza
+  - kirsty
 
 samba:
   global:
@@ -68,8 +69,8 @@ backup_dirs:
     owner: "dezza"
   - dirname: "hqlil1"
     owner: "dezza"
-#  - dirname: "kirsty"
-#    owner: "kirsty"
+  - dirname: "kirsty"
+    owner: "kirsty"
 
 printer_admins:
   - dezza
