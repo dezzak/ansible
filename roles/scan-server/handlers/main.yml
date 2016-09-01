@@ -1,5 +1,5 @@
 ---
 - name: restart sane
-  service: name=saned state=restarted
+  service: name=saned.socket state=restarted
 
 

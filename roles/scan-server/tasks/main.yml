@@ -14,8 +14,10 @@
   notify:
     - restart sane
 
-- name: Ensure that saned is in the scanner group
-  user: name=saned append=yes groups=scanner,lp
+- name: Ensure that saned and scanner users are in the scanner group
+  user: name={{ item }} append=yes groups=scanner,lp
+  with_items:
+    "{{ scanner_users + ['saned'] }}"
   notify:
     - restart sane
 
@@ -30,7 +32,7 @@
     - restart sane
 
 - name: Ensure that saned service is enabled
-  service: name=saned enabled=yes
+  service: name=saned.socket enabled=yes
   notify:
     - restart sane
 

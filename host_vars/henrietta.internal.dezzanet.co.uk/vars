@@ -75,3 +75,7 @@ backup_dirs:
 printer_admins:
   - dezza
 
+scanner_users:
+  - dezza
+  - kirsty
+
