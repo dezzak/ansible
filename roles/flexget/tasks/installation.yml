@@ -21,7 +21,7 @@
   pip: name=functools32 state=latest
 
 - name: Ensure that flexget is installed
-  pip: name=flexget state=present version=1.2.513
+  pip: name=flexget state=present version=2.3.0
   notify: restart flexget
 
 - name: Ensure that defaults file is set
