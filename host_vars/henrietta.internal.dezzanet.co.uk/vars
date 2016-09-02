@@ -3,6 +3,7 @@ media_root_dir: "/media/media/media/media"
 media_users:
   - dezza
   - kirsty
+  - debian-transmission
 
 samba:
   global:
