@@ -1,4 +1,5 @@
 ---
+
 - name: Ensure flexget packages installed
   apt: name={{ item }} state=installed
   with_items:
@@ -19,6 +20,14 @@
 
 - name: Ensure that functools32 is installed
   pip: name=functools32 state=latest
+
+- name: Ensure that TransmissionRPC is installed
+  pip: name=transmissionrpc state=latest
+  notify: restart flexget
+
+- name: Ensure that sqlalchemy is the latest
+  pip: name=sqlalchemy state=latest
+  notify: restart flexget
 
 - name: Ensure that flexget is installed
   pip: name=flexget state=present version=2.3.0
