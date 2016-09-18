@@ -34,4 +34,4 @@
   become_method: sudo
   roles:
     - backup-host
-    - { role: leucos.s3cmd }
+    - { role: s3cmd }
