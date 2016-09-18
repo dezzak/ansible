@@ -1,6 +1,6 @@
 [submodule "roles/samba"]
 	path = roles/samba
 	url = https://github.com/dezzak/ansible-role-samba
-[submodule "roles/leucos.s3cmd"]
-	path = roles/leucos.s3cmd
-	url = git@github.com:leucos/ansible-s3cmd.git
+[submodule "roles/s3cmd"]
+	path = roles/s3cmd
+	url = git@github.com:dezzak/ansible-s3cmd.git
