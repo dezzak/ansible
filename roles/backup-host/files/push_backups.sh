@@ -17,13 +17,13 @@ cd $BACKUP_ROOT
 /usr/bin/gpg --output "${ENCRYPTED_ARCHIVE_PATH}" --encrypt --recipient dezza@dezzanet.co.uk "${ARCHIVE_PATH}"
 
 # Push to S3
-s3cmd put "${ENCRYPTED_ARCHIVE_PATH}" "${BACKUP_BUCKET}"
+/usr/local/bin/s3cmd put "${ENCRYPTED_ARCHIVE_PATH}" "${BACKUP_BUCKET}"
 
 # Rotate archive
-s3cmd ls "${BACKUP_BUCKET}" | grep --quiet "${OLD_ARCHIVE_PATH}"
+/usr/local/bin/s3cmd ls "${BACKUP_BUCKET}" | grep --quiet "${OLD_ARCHIVE_PATH}"
 if [ ! $? ]; then
     #echo "Would remove from bucket"
-    s3cmd del "${BACKUP_BUCKET}${OLD_ARCHIVE_PATH}"
+    /usr/local/bin/s3cmd del "${BACKUP_BUCKET}${OLD_ARCHIVE_PATH}"
 else
     echo "Not found on remote"
 fi
