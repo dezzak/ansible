@@ -7,7 +7,7 @@
 - name: Ensure that apcupsd is configured
   template:
     src=apcupsd.conf.j2
-    dest=/etc/acpupsd/apcupsd.conf
+    dest=/etc/apcupsd/apcupsd.conf
     owner=root
     group=root
     mode=0640
@@ -15,6 +15,7 @@
 
 - name: Ensure that apcupsd is enabled
   lineinfile:
-    regex='^ISCONFIGURED='
+    dest=/etc/default/apcupsd
+    regexp=^ISCONFIGURED=
     line='ISCONFIGURED=yes'
   notify: restart apcupsd
