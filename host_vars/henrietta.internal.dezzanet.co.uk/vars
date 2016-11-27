@@ -80,3 +80,10 @@ scanner_users:
   - dezza
   - kirsty
 
+ups:
+  name: "elenola"
+  cable: "ether"
+  type: "net"
+  device: "elenola.internal.dezzanet.co.uk:3551"
+  batterylevel: 18
+  minutes: 7
