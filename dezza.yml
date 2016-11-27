@@ -35,3 +35,9 @@
   roles:
     - backup-host
     - { role: s3cmd }
+
+- hosts: ups-hosts
+  become: yes
+  become_method: sudo
+  roles:
+    - apcupsd
