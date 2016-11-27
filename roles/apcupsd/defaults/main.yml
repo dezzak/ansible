@@ -1,0 +1,10 @@
+---
+
+ups:
+  name: "xxx"
+  cable: "usb"
+  type: "usb"
+  device: ""
+  batterylevel: 5
+  minutes: 2
+
