@@ -1,0 +1,8 @@
+---
+ups:
+  name: "elenola"
+  cable: "usb"
+  type: "usb"
+  device: "elenola.internal.dezzanet.co.uk:3551"
+  batterylevel: 15
+  minutes: 5
