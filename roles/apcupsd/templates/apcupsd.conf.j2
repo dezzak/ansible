@@ -89,7 +89,7 @@ DEVICE {{ ups.device }}
 #   will improve apcupsd's responsiveness to certain events at the cost of
 #   higher CPU utilization. The default of 60 is appropriate for most
 #   situations.
-#POLLTIME 60
+POLLTIME {{ ups.polltime }}
 
 # LOCKFILE <path to lockfile>
 #   Path for device lock file. Not used on Win32.
@@ -195,7 +195,7 @@ NETSERVER on
 #  NIS will listen for connections only on that interface. Use the
 #  loopback address (127.0.0.1) to accept connections only from the
 #  local machine.
-NISIP 127.0.0.1
+NISIP {{ ups.nisip }}
 
 # NISPORT <port> default is 3551 as registered with the IANA
 #  port to use for sending STATUS and EVENTS data over the network.
@@ -238,7 +238,7 @@ UPSMODE disable
 #
 
 # Time interval in seconds between writing the STATUS file; 0 disables
-STATTIME 0
+STATTIME {{ ups.stattime }}
 
 # Location of STATUS file (written to only if STATTIME is non-zero)
 STATFILE /var/log/apcupsd.status

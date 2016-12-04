@@ -3,6 +3,9 @@ ups:
   name: "elenola"
   cable: "usb"
   type: "usb"
-  device: "elenola.internal.dezzanet.co.uk:3551"
-  batterylevel: 15
-  minutes: 5
+  device: ""
+  polltime: 6
+  batterylevel: 10
+  minutes: 3
+  nisip: 192.168.0.23
+  stattime: 60

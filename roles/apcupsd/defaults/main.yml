@@ -7,4 +7,7 @@ ups:
   device: ""
   batterylevel: 5
   minutes: 2
+  polltime: 60
+  nisip: 127.0.0.1
+  stattime: 0
 
