@@ -2,6 +2,7 @@
 elenola.internal.dezzanet.co.uk
 henrietta.internal.dezzanet.co.uk
 jemima.internal.dezzanet.co.uk
+kimberly.internal.dezzanet.co.uk
 
 [print-servers]
 henrietta.internal.dezzanet.co.uk
@@ -19,3 +20,7 @@ henrietta.internal.dezzanet.co.uk
 elenola.internal.dezzanet.co.uk
 jemima.internal.dezzanet.co.uk
 henrietta.internal.dezzanet.co.uk
+kimberly.internal.dezzanet.co.uk
+
+[apt-cache-servers]
+kimberly.internal.dezzanet.co.uk
