@@ -1,5 +1,13 @@
 ---
 
+- name: Ensure apt is properly configured
+  copy:
+    src=apt-cacher
+    dest=/etc/apt/apt.conf.d/10aptcacher
+    owner=root
+    group=root
+    mode=0644
+
 - name: Ensure apt cache up to date
   apt: update_cache=yes cache_valid_time=3600
 
