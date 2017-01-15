@@ -2,3 +2,12 @@
 
 - name: Ensure that apt-cacher-ng is installed
   apt: name="apt-cacher-ng" state=present
+
+- name: Ensure that apcupsd is configured
+  copy:
+    src=acng.conf
+    dest=/etc/apt-cacher-ng/acng.conf
+    owner=root
+    group=root
+    mode=0644
+  notify: restart aptcacher
