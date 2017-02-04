@@ -10,7 +10,6 @@
     - ffmpeg
     - rtmpdump
     - atomicparsley
-    - id3v2
     - ffmpeg2theora
     - libav-tools
     - libwww-perl
