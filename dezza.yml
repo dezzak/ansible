@@ -47,3 +47,15 @@
   become_method: sudo
   roles:
     - apt-cacher-ng
+
+- hosts: dns-servers
+  become: yes
+  become_method: sudo
+  roles:
+    - dns-server
+
+- hosts: dhcp-servers
+  become: yes
+  become_method: sudo
+  roles:
+    - dhcp-server

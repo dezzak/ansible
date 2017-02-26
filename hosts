@@ -24,3 +24,9 @@ kimberly.internal.dezzanet.co.uk
 
 [apt-cache-servers]
 kimberly.internal.dezzanet.co.uk
+
+[dns-servers]
+elenola.internal.dezzanet.co.uk
+
+[dhcp-servers]
+elenola.internal.dezzanet.co.uk

@@ -1,0 +1,37 @@
+#
+# Ansible managed configuration file for ISC dhcpd for Debian
+#
+#
+
+{% for key, value in dhcpd_settings.iteritems() %}
+{{ key|replace("_", "-") }} {{ value }};
+{% endfor %}
+
+# option definitions common to all supported networks...
+
+{% for key, value in dhcpd_common_options.iteritems() %}
+option {{ key|replace("_", "-") }} {{ value }};
+{% endfor %}
+
+{% for subnet in dhcpd_subnets %}
+subnet {{ subnet.network }} netmask {{ subnet.netmask }} {
+  range {{ subnet.range }};
+{% for key, value in subnet.options.iteritems() %}
+  option {{ key|replace("_", "-") }} {{ value }};
+{% endfor %}
+}
+{% endfor %}
+
+# Fixed IP addresses can also be specified for hosts.   These addresses
+# should not also be listed as being available for dynamic assignment.
+# Hosts for which fixed IP addresses have been specified can boot using
+# BOOTP or DHCP.   Hosts for which no fixed address is specified can only
+# be booted with DHCP, unless there is an address range on the subnet
+# to which a BOOTP client is connected which has the dynamic-bootp flag
+# set.
+{% for host in dhcpd_hosts %}
+host {{ host.name }} {
+    hardware ethernet {{ host.hardware_addr }};
+    fixed-address {{ host.fixed_addr }};
+}
+{% endfor %}

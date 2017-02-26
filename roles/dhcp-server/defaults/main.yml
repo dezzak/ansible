@@ -1,0 +1,11 @@
+---
+
+dhcpd_settings:
+  ddns_update_style: none
+  max_lease_time: 7200
+  authoritative: ''
+  log_facility: local7
+dhcpd_common_options:
+    domain_name: '"example.org"'
+dhcpd_subnets: []
+dhcpd_hosts: []
