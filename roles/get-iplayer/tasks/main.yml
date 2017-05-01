@@ -67,3 +67,14 @@
     dow=6,7
     state=present
     job=/usr/local/bin/get_iplayer_run
+
+- name: Set up cache refresh cron job
+  cron:
+    cron_file=get-iplayer
+    name=cache refresh
+    user=dezza
+    minute=0
+    hour=0
+    dow=1
+    state=present
+    job=get_iplayer --refresh --type="tv,radio"
