@@ -71,10 +71,10 @@
 - name: Set up cache refresh cron job
   cron:
     cron_file=get-iplayer
-    name=cache refresh
+    name="cache refresh"
     user=dezza
     minute=0
     hour=0
     dow=1
     state=present
-    job=get_iplayer --refresh --type="tv,radio"
+    job="get_iplayer --refresh --type='tv,radio'"
