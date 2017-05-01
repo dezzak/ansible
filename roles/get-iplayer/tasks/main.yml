@@ -8,12 +8,12 @@
   with_items:
     - perl
     - ffmpeg
-    - rtmpdump
     - atomicparsley
     - ffmpeg2theora
     - libav-tools
     - libwww-perl
     - libxml-simple-perl
+    - libmojolicious-perl
     - git
 
 - name: Ensure that gip is latest version
