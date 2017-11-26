@@ -5,8 +5,8 @@
 
 - name: Ensure that apcupsd is configured
   copy:
-    src=acng.conf
-    dest=/etc/apt-cacher-ng/acng.conf
+    src=local.conf
+    dest=/etc/apt-cacher-ng/local.conf
     owner=root
     group=root
     mode=0644
