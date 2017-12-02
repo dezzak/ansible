@@ -65,3 +65,4 @@
   become_method: sudo
   roles:
     - media-client
+    - demetria-dualscreen

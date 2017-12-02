@@ -1,0 +1,7 @@
+---
+
+- name: Ensure dualscreen setup is correct
+  copy:
+    src=30-nvidia_dezza.conf
+    dest=/etc/X11/xorg.conf.d/30-nvidia_dezza.conf
+    mode=0644
