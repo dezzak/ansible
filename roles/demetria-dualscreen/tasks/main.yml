@@ -1,5 +1,19 @@
 ---
 
+- name: Ensure that non-free and contrib are available
+  apt_repository:
+    repo: deb http://ftp.uk.debian.org/debian/ stretch contrib non-free
+    state: present
+    update_cache: yes
+
+- name: Install appropriate modules
+  apt:
+    name={{ item }}
+    state=present
+  with_items:
+    - linux-headers-amd64
+    - nvidia-legacy-304xx-driver
+
 - name: Ensure directory is present
   file:
     path=/etc/X11/xorg.conf.d/
