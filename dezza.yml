@@ -59,3 +59,9 @@
   become_method: sudo
   roles:
     - dhcp-server
+
+- hosts: desktop
+  become: yes
+  become_method: sudo
+  roles:
+    - media-client
