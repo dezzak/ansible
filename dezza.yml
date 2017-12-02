@@ -22,7 +22,7 @@
   become_method: sudo
   roles:
     - media-servers
-    - { role: yamb00.samba }
+    - samba
     - transmission
     - flexget
     - media-clamscan
@@ -64,5 +64,6 @@
   become: yes
   become_method: sudo
   roles:
+    - backup-client
     - media-client
     - demetria-dualscreen

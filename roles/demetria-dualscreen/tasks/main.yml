@@ -1,5 +1,13 @@
 ---
 
+- name: Ensure directory is present
+  file:
+    path=/etc/X11/xorg.conf.d/
+    state=directory
+    owner=root
+    group=root
+    mode=0755
+
 - name: Ensure dualscreen setup is correct
   copy:
     src=30-nvidia_dezza.conf

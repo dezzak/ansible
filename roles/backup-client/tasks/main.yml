@@ -1,0 +1,18 @@
+---
+
+- name: Ensure backup script is present
+  copy:
+    src=backup.sh
+    dest=/home/dezza/bin/backup.sh
+    mode=0755
+
+- name: Ensure cron job is set up
+  cron:
+    cron_file=backups
+    name=homeDir
+    user=dezza
+    minute=0
+    hour=*
+    dow=*
+    state=present
+    job=/home/dezza/bin/backup.sh
