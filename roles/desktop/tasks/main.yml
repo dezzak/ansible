@@ -18,5 +18,10 @@
     - libappindicator1
     - libcurl3
 
+- name: Ensure LaTeX and dependendencies are installed
+  apt: name={{ item }} state=installed
+  with_items:
+    - texlive-full
+
 - include: scan-client.yml
 - include: print-client.yml
