@@ -8,6 +8,7 @@
     - kmymoney
     - keepass2
     - xdotool
+    - tumbler-plugins-extra
 
 - name: Ensure slack dependencies installed
   apt: name={{ item }} state=installed
