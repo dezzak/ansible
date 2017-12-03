@@ -17,3 +17,5 @@
     - apt-transport-https
     - libappindicator1
     - libcurl3
+
+- include: scan-client.yml

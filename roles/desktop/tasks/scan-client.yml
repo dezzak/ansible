@@ -1,0 +1,16 @@
+---
+
+- name: Ensure scan packages installed
+  apt: name={{ item }} state=installed
+  with_items:
+    - libsane
+
+- name: Ensure that network scanner is enabled
+  lineinfile:
+    dest: /etc/sane.d/dll.conf
+    line: 'net'
+
+- name: configure network scanner
+  lineinfile:
+    dest: /etc/sane.d/net.conf
+    line: 'henrietta.internal.dezzanet.co.uk'
