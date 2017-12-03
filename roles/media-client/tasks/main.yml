@@ -6,6 +6,7 @@
     - cifs-utils
     - smbclient
     - vlc
+    - puddletag
 
 - name: Ensure sbmpasswords file is set
   template:
