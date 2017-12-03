@@ -1,0 +1,17 @@
+---
+
+- name: Ensure cups directory is present
+  file:
+    path=/etc/cups/
+    state=directory
+    owner=root
+    group=root
+    mode=0755
+
+- name: Ensure cups client file is present
+  copy:
+    src=cups-client.conf
+    dest=/etc/cups/client.conf
+    owner=root
+    group=root
+    mode=0644
