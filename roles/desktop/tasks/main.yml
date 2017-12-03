@@ -8,3 +8,12 @@
     - kmymoney
     - keepass2
     - xdotool
+
+- name: Ensure slack dependencies installed
+  apt: name={{ item }} state=installed
+  with_items:
+    - gconf2
+    - gvfs-bin
+    - apt-transport-https
+    - libappindicator1
+    - libcurl3
