@@ -5,7 +5,7 @@ ups:
   type: "net"
   device: "elenola.internal.dezzanet.co.uk:3551"
   batterylevel: 15
-  minutes: 5
-  polltime: 60
+  minutes: 7
+  polltime: 6
   nisip: 127.0.0.1
   stattime: 0

@@ -85,8 +85,8 @@ ups:
   cable: "ether"
   type: "net"
   device: "elenola.internal.dezzanet.co.uk:3551"
-  batterylevel: 18
-  minutes: 7
-  polltime: 60
+  batterylevel: 20
+  minutes: 10
+  polltime: 6
   nisip: 127.0.0.1
   stattime: 0
