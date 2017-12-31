@@ -50,6 +50,9 @@ dhcpd_hosts:
   - name: kimberly
     hardware_addr: "ee:4f:37:42:83:37"
     fixed_addr: kimberly.internal.dezzanet.co.uk
+  - name: lorella
+    hardware_addr: "10:7b:44:10:9e:f9"
+    fixed_addr: lorella.internal.dezzanet.co.uk
   - name: kirsty-phone
     hardware_addr: "90:c1:15:b6:b2:ea"
     fixed_addr: kirsty.internal.dezzanet.co.uk
