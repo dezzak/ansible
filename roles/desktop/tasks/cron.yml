@@ -1,0 +1,26 @@
+---
+
+- name: Ensure bin directory is present
+  file:
+    path=/home/dezza/bin
+    state=directory
+    owner=dezza
+    group=dezza
+    mode=0755
+
+- name: Ensure clear downloads file is present
+  copy:
+    src=clear-downloads.sh
+    dest=/home/dezza/bin/clear-downloads.sh
+    owner=dezza
+    group=dezza
+    mode=0755
+
+- name: Set up cron job to clear downloads
+  cron:
+    cron_file="clear_downloads"
+    name="clear downloads"
+    user=dezza
+    minute=*/15
+    hour=*
+    job="/home/dezza/bin/clear-downloads.sh"

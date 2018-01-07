@@ -26,3 +26,4 @@
 
 - include: scan-client.yml
 - include: print-client.yml
+- include: cron.yml
