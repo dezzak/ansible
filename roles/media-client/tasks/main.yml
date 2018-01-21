@@ -7,6 +7,7 @@
     - smbclient
     - vlc
     - puddletag
+    - sshfs
 
 - name: Ensure sbmpasswords file is set
   template:
