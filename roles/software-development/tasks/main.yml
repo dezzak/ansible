@@ -6,6 +6,6 @@
     - git
     - gcc
     - python-setuptools
-    - sqlite
+    - sqlite3
     - php
     - php-sqlite3
