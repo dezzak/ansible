@@ -15,6 +15,7 @@
     - libxml-simple-perl
     - libmojolicious-perl
     - git
+    - xsltproc
 
 - name: Ensure that gip is latest version
   git:
