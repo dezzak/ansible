@@ -6,3 +6,4 @@
     - git
     - gcc
     - python-setuptools
+    - sqlite
