@@ -8,3 +8,4 @@
     - python-setuptools
     - sqlite
     - php
+    - php-sqlite3
