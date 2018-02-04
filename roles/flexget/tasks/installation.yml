@@ -30,7 +30,7 @@
   notify: restart flexget
 
 - name: Ensure that flexget is installed
-  pip: name=flexget state=present version=2.3.0
+  pip: name=flexget state=present version=2.10.107
   notify: restart flexget
 
 - name: Ensure that defaults file is set
