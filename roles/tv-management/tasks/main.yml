@@ -10,6 +10,7 @@
 - name: Ensure cpan dependencies are installed
   cpanm: name={{ item }}
   with_items:
+    - Module::Install
     - Config::Tiny
     - Transmission::Client
 
