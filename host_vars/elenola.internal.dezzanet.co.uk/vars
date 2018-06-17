@@ -54,8 +54,8 @@ dhcpd_hosts:
     hardware_addr: "10:7b:44:10:9e:f9"
     fixed_addr: lorella.internal.dezzanet.co.uk
   - name: kirsty-phone
-    hardware_addr: "90:c1:15:b6:b2:ea"
-    fixed_addr: kirsty.internal.dezzanet.co.uk
+    hardware_addr: "d4:38:9c:e1:68:e4"
+    fixed_addr: kirsty-phone.internal.dezzanet.co.uk
   - name: kirsty-laptop
     hardware_addr: "00:1b:b1:5c:3c:24"
     fixed_addr: kirsty-laptop.internal.dezzanet.co.uk
