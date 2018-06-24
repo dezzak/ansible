@@ -3,7 +3,7 @@
 - name: Ensure that apt-cacher-ng is installed
   apt: name="apt-cacher-ng" state=present
 
-- name: Ensure that apcupsd is configured
+- name: Ensure that apt-cacher-ng is configured
   copy:
     src=local.conf
     dest=/etc/apt-cacher-ng/local.conf
