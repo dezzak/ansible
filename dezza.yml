@@ -5,6 +5,10 @@
   roles:
     - core
 
+- hosts: dot-files
+  roles:
+    - dot-files
+
 - hosts: print-servers
   become: yes
   become_method: sudo

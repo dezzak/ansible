@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  role_name: dot-files
+  author: Derek Kaye
+  description: Clones the dot-files repo to the remote host and copies the files to their correct locations.
+  license: GPLv3
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+
+dependencies: []

@@ -1,0 +1,40 @@
+---
+
+- name: Set up bash profile
+  copy:
+    remote_src=yes
+    src=/srv/dot-files/.profile
+    dest="{{ ansible_env.HOME }}/.profile"
+    mode=0644
+    owner="{{ ansible_env.USER }}"
+
+- name: Set up bashrc
+  copy:
+    remote_src=yes
+    src=/srv/dot-files/.bashrc
+    dest="{{ ansible_env.HOME }}/.bashrc"
+    mode=0644
+    owner="{{ ansible_env.USER }}"
+
+- name: Set up ansible config
+  copy:
+    remote_src=yes
+    src=/srv/dot-files/.ansible.cfg
+    dest="{{ ansible_env.HOME }}/.ansible.cfg"
+    mode=0644
+    owner="{{ ansible_env.USER }}"
+
+- name: Ensure ssh directory exists
+  file:
+    path="{{ ansible_env.HOME }}/.ssh"
+    state=directory
+    owner="{{ ansible_env.USER }}"
+    mode=0700
+
+- name: Set up ssh config
+  copy:
+    remote_src=yes
+    src=/srv/dot-files/.ssh/config
+    dest="{{ ansible_env.HOME }}/.ssh/config"
+    mode=0644
+    owner="{{ ansible_env.USER }}"

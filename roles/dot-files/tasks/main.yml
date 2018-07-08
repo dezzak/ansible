@@ -1,0 +1,21 @@
+---
+- name: Ensure git is installed
+  become: yes
+  become_method: sudo
+  apt: name=git state=present
+
+- name: Ensure directory exists
+  become: yes
+  become_method: sudo
+  file:
+    path=/srv/dot-files
+    state=directory
+
+- name: Ensure contents are up to date
+  become: yes
+  become_method: sudo
+  git:
+    repo: 'https://github.com/dezzak/dot-files.git'
+    dest: /srv/dot-files
+
+- include: files.yml
