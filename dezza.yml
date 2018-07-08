@@ -4,9 +4,6 @@
   become_method: sudo
   roles:
     - core
-
-- hosts: dot-files
-  roles:
     - dot-files
 
 - hosts: print-servers
