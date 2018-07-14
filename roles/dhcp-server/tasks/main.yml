@@ -12,3 +12,12 @@
     group=root
     mode=0644
   notify: restart dhcpd
+
+- name: Ensure DHCPCD is configured
+  template:
+    src=dhcpcd.conf.j2
+    dest=/etc/dhcpcd.conf
+    owner=root
+    group=netdev
+    mode=0664
+  notify: restart dhcpd
