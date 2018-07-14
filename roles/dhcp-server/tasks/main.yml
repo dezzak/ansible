@@ -21,3 +21,12 @@
     group=netdev
     mode=0664
   notify: restart dhcpd
+
+- name: Ensure DHCPD is configured in /etc/defaults
+  template:
+    src=isc-dhcp-server.j2
+    dest=/etc/default/isc-dhcp-server
+    owner=root
+    group=root
+    mode=0644
+  notify: restart dhcpd
