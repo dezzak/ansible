@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  role_name: iptables
+  author: Derek Kaye
+  description: Configures iptables on hosts
+  license: GPLv3
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: Debian
+      versions:
+        - stretch
+
+dependencies: []

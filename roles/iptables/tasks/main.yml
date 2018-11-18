@@ -1,0 +1,10 @@
+---
+- name: Ensure rules file is present
+  become: yes
+  become_method: sudo
+  template:
+    src=rules.j2
+    dest=/etc/iptables.up.rules
+    group=root
+    owner=root
+    mode=0600
