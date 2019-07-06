@@ -22,3 +22,10 @@
     - fail2ban
     - openntpd
 
+- name: Set defaults for OpenNTPd
+  copy:
+    src=openntpd_defaults
+    dest=/etc/default/openntpd
+    owner=root
+    group=root
+    mode=0644
