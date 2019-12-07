@@ -1,13 +1,8 @@
 ---
 - name: Ensure media software is installed
   apt:
-   name={{ item }} state=present
-  with_items:
-    - cifs-utils
-    - smbclient
-    - vlc
-    - puddletag
-    - sshfs
+   name: ['cifs-utils', 'smbclient', 'vlc', 'puddletag', 'sshfs']
+   state: present
 
 - name: Ensure sbmpasswords file is set
   template:

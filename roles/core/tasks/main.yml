@@ -15,12 +15,9 @@
   apt: upgrade=safe
 
 - name: Install core software
-  apt: name={{ item }} state=present
-  with_items:
-    - htop
-    - screen
-    - fail2ban
-    - openntpd
+  apt:
+    name: ['htop', 'screen', 'fail2ban', 'openntpd']
+    state: present
 
 - name: Set defaults for OpenNTPd
   copy:
