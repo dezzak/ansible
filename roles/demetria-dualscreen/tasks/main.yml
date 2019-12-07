@@ -2,17 +2,14 @@
 
 - name: Ensure that non-free and contrib are available
   apt_repository:
-    repo: deb http://ftp.uk.debian.org/debian/ stretch contrib non-free
+    repo: "deb http://ftp.uk.debian.org/debian/ {{ ansible_distribution_release }} contrib non-free"
     state: present
     update_cache: yes
 
 - name: Install appropriate modules
   apt:
-    name={{ item }}
-    state=present
-  with_items:
-    - linux-headers-amd64
-    - nvidia-legacy-304xx-driver
+    name: ['linux-headers-amd64', 'nvidia-legacy-340xx-driver']
+    state: present
 
 - name: Ensure directory is present
   file:
