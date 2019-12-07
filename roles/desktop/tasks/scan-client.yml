@@ -1,9 +1,9 @@
 ---
 
 - name: Ensure scan packages installed
-  apt: name={{ item }} state=installed
-  with_items:
-    - libsane
+  apt:
+    name: ['libsane']
+    state: present
 
 - name: Ensure that network scanner is enabled
   lineinfile:

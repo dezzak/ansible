@@ -1,14 +1,9 @@
 ---
 
 - name: Ensure desktop packages installed
-  apt: name={{ item }} state=installed
-  with_items:
-    - chromium
-    - thunderbird
-    - kmymoney
-    - keepass2
-    - xdotool
-    - tumbler-plugins-extra
+  apt:
+    name: ['chromium', 'chromium-sandbox', 'thunderbird', 'kmymoney', 'keepass2', 'xdotool', 'tumbler-plugins-extra', 'gramps']
+    state: present
 
 #- name: Ensure slack dependencies installed
 #  apt: name={{ item }} state=installed
@@ -20,9 +15,9 @@
 #    - libcurl3
 
 - name: Ensure LaTeX and dependendencies are installed
-  apt: name={{ item }} state=installed
-  with_items:
-    - texlive-full
+  apt:
+    name: ['texlive-full']
+    state: present
 
 - include: scan-client.yml
 - include: print-client.yml

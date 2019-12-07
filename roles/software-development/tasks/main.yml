@@ -1,12 +1,6 @@
 ---
 
 - name: Ensure software development packages installed
-  apt: name={{ item }} state=installed
-  with_items:
-    - git
-    - gcc
-    - python-setuptools
-    - sqlite3
-    - php
-    - php-sqlite3
-    - php-gd
+  apt:
+    name: ['git', 'gcc', 'python-setuptools', 'sqlite3', 'php', 'php-sqlite3', 'php-gd']
+    state: present
