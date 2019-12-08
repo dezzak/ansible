@@ -1,11 +1,9 @@
 ---
 
 - name: Ensure dependencies are installed
-  apt: name={{ item }} state=present
-  with_items:
-    - perl
-    - git
-    - cpanminus
+  apt:
+    name: ['perl', 'git', 'cpanminus']
+    state: present
 
 - name: Ensure cpan dependencies are installed
   cpanm: name={{ item }}

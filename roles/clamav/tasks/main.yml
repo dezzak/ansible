@@ -1,11 +1,9 @@
 ---
 
 - name: Ensure clamav is installed
-  apt: name={{ item }} state=present
-  with_items:
-    - clamav-freshclam
-    - clamav
-    - logrotate
+  apt:
+    name: ['clamav-freshclam', 'clamav', 'logrotate']
+    state: present
 
 - name: Ensure that freshclam logrote is gone
   file:

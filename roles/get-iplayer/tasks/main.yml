@@ -4,18 +4,19 @@
   when: ansible_distribution == 'Debian' and ansible_distribution_version|int < 9
 
 - name: Ensure that gip dependencies are installed
-  apt: name={{ item }} state=present
-  with_items:
-    - perl
-    - ffmpeg
-    - atomicparsley
-    - ffmpeg2theora
-    - libav-tools
-    - libwww-perl
-    - libxml-simple-perl
-    - libmojolicious-perl
-    - git
-    - xsltproc
+  apt:
+    name:
+      - perl
+      - ffmpeg
+      - atomicparsley
+      - ffmpeg2theora
+      - libav-tools
+      - libwww-perl
+      - libxml-simple-perl
+      - libmojolicious-perl
+      - git
+      - xsltproc
+    state: present
 
 - name: Ensure that gip is latest version
   git:
