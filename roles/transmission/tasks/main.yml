@@ -1,9 +1,8 @@
 ---
 - name: Ensure transmission is installed
-  apt: name={{ item }} state=installed
-  with_items:
-    - transmission-daemon
-    - transmission-cli
+  apt:
+    name: ['transmission-daemon', 'transmission-cli']
+    state: present
   notify: restart transmission
 
 - name: Ensure transmission config is correct

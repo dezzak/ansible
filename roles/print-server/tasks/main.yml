@@ -6,10 +6,9 @@
     "{{ printer_admins }}"
 
 - name: Ensure that cups is installed
-  apt: name={{ item }} state=present
-  with_items:
-    - cups
-    - cups-client
+  apt:
+    name: ['cups', 'cups-client']
+    state: present
   notify:
     - restart cups
 
