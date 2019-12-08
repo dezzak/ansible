@@ -11,11 +11,11 @@
     state: latest
     executable: /usr/bin/pip3
 
-- name: Ensure that functools32 is installed
-  pip:
-    name: functools32
-    state: latest
-    executable: /usr/bin/pip3
+#- name: Ensure that functools32 is installed
+#  pip:
+#    name: functools32
+#    state: latest
+#    executable: /usr/bin/pip3
 
 - name: Ensure that TransmissionRPC is installed
   pip:
