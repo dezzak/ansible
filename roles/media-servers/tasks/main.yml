@@ -5,5 +5,12 @@
 
 - name: Ensure users are in media group
   user: name={{ item }} groups=media append=yes
-  with_items:
-    "{{ media_users }}"
+  with_items: "{{ media_users }}"
+
+- name: create directories
+  file:
+    path: "{{ media_root_dir }}"
+    owner: nobody
+    group: media
+    mode: "0775"
+    state: directory
