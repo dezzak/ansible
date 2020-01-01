@@ -68,8 +68,6 @@ backup_base_dir: "/media/media/backups"
 backup_dirs:
   - dirname: "demetria"
     owner: "dezza"
-  - dirname: "hqlil1"
-    owner: "dezza"
   - dirname: "kirsty"
     owner: "kirsty"
 
