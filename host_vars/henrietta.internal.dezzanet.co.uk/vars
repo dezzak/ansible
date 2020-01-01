@@ -4,6 +4,7 @@ media_users:
   - dezza
   - kirsty
   - debian-transmission
+  - arthur
 
 samba:
   global:
@@ -43,10 +44,7 @@ samba:
       path: "{{ media_root_dir }}"
       browseable: "yes"
       guest_ok: "no"
-      writable: "yes"
-      force_user: "nobody"
-      force_group: "media"
-      directory_mask: "0775"
+      writable: "no"
 
 transmission:
   download_dir: "{{ media_root_dir }}/torrents"
