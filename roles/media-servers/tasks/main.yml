@@ -14,3 +14,16 @@
     group: media
     mode: "0775"
     state: directory
+
+- name: Ensure that age restriction groups are present
+  group:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ age_restriction_groups }}"
+
+- name: Ensure users in correct age restriction groups
+  user:
+    name: "{{ item.key }}"
+    groups: "{{ item.value}}"
+    append: yes
+  with_dict: "{{ age_restriction_settings }}"

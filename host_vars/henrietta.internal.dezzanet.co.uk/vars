@@ -6,6 +6,20 @@ media_users:
   - debian-transmission
   - arthur
 
+age_restriction_groups:
+  - age-unknown
+  - age-0
+  - age-pg
+  - age-12
+  - age-15
+  - age-18
+
+age_restriction_settings:
+  dezza: "{{ age_restriction_groups }}"
+  kirsty: "{{ age_restriction_groups }}"
+  arthur:
+    - "age-0"
+
 samba:
   global:
     workgroup: "DEZZANET"
