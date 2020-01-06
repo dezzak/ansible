@@ -1,5 +1,10 @@
 ---
 
+- name: Ensure dependencies are installed
+  apt:
+    name: ['rsync']
+    state: present
+
 - name: Ensure backup script is present
   copy:
     src=backup.sh
