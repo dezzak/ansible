@@ -11,3 +11,12 @@
     group=root
     mode=0644
   notify: restart aptcacher
+
+- name: Remove local apt cache
+  lineinfile:
+    dest: /etc/apt/apt.conf.d/30remove-local-cache
+    line: 'DPkg::Post-Invoke {"/bin/rm -f /var/cache/apt/archives/*.deb || true";};'
+    create: yes
+    group: root
+    mode: 0644
+    owner: root
