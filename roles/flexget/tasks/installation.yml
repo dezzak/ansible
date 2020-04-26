@@ -35,7 +35,6 @@
   pip:
     name: flexget
     state: present
-    version: 2.10.107
     executable: /usr/bin/pip3
   notify: restart flexget
 
