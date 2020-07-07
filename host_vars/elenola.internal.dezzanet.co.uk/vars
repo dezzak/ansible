@@ -21,7 +21,7 @@ dhcpd_subnets:
   - network: 192.168.0.0
     netmask: 255.255.255.0
     options:
-      routers: 192.168.0.3
+      routers: 192.168.0.6
       domain_name_servers: 192.168.0.23
     range: "192.168.0.110 192.168.0.120"
 
