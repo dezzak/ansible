@@ -2,7 +2,7 @@
 
 - name: Ensure desktop packages installed
   apt:
-    name: ['chromium', 'chromium-sandbox', 'thunderbird', 'kmymoney', 'keepass2', 'xdotool', 'tumbler-plugins-extra', 'gramps', 'redshift', 'redshift-gtk']
+    name: ['chromium', 'chromium-sandbox', 'thunderbird', 'kmymoney', 'keepass2', 'xdotool', 'tumbler-plugins-extra', 'gramps', 'redshift', 'redshift-gtk', 'gir1.2-goocanvas-2.0', 'libgoocanvas-2.0-9', 'python3-networkx', 'python3-pygraphviz', 'python3-pydotplus', 'oxygen-icon-theme']
     state: present
 
 #- name: Ensure slack dependencies installed
