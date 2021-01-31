@@ -70,7 +70,6 @@
   roles:
     - backup-client
     - media-client
-    - demetria-dualscreen
     - desktop
     - software-development
     - iptables
