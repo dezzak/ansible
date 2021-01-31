@@ -1,7 +1,7 @@
 ---
 - name: Ensure media software is installed
   apt:
-   name: ['cifs-utils', 'smbclient', 'vlc', 'puddletag', 'sshfs']
+   name: ['cifs-utils', 'smbclient', 'vlc', 'puddletag', 'sshfs', 'cmus']
    state: present
 
 - name: Ensure sbmpasswords file is set
