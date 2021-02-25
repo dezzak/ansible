@@ -2,7 +2,9 @@
 
 - name: Ensure scan packages installed
   apt:
-    name: ['libsane']
+    name:
+      - libsane
+      - xsane
     state: present
 
 - name: Ensure that network scanner is enabled

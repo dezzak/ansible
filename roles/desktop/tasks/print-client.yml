@@ -15,3 +15,10 @@
     owner=root
     group=root
     mode=0644
+
+- name: Ensure print packages installed
+  apt:
+    name:
+      - cups-client
+      - system-config-printer
+    state: present

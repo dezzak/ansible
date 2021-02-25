@@ -1,8 +1,16 @@
 ---
 
-- name: Ensure desktop packages installed
+- name: Ensure desktop environment packages installed
   apt:
-    name: ['chromium', 'chromium-sandbox', 'thunderbird', 'kmymoney', 'keepass2', 'mono-complete', 'xdotool', 'tumbler-plugins-extra', 'gramps', 'redshift', 'redshift-gtk', 'gir1.2-goocanvas-2.0', 'libgoocanvas-2.0-9', 'python3-networkx', 'python3-pygraphviz', 'python3-pydotplus', 'oxygen-icon-theme', 'evince']
+    name: 
+      - redshift
+      - redshift-gtk
+      - lightdm
+      - network-manager-gnome
+      - fonts-dejavu
+      - tumbler-plugins-extra
+      - gnome-keyring
+      - gnome-themes-extra
     state: present
 
 #- name: Ensure slack dependencies installed
@@ -19,6 +27,8 @@
     name: ['texlive-full']
     state: present
 
+- include: generic-applications.yml
 - include: scan-client.yml
 - include: print-client.yml
 - include: cron.yml
+- include: family-history.yml
