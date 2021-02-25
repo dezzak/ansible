@@ -1,4 +1,7 @@
 ---
+network:
+  ipv6_addr: "2001:8b0:caf4:0:ba27:ebff:fee8:1c07"
+
 ups:
   name: "elenola"
   cable: "usb"

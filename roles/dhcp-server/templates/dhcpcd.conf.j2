@@ -47,3 +47,4 @@ interface eth0
 static ip_address={{ ansible_eth0.ipv4.address }}
 static routers={{ localnet_ipv4_gateway }}
 static domain_name_servers=127.0.0.1
+static ip6_address={{ network.ipv6_addr }}/64
