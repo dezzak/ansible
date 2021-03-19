@@ -3,15 +3,15 @@ network:
   ipv6_addr: "2001:8b0:caf4:0:ba27:ebff:fee8:1c07"
 
 ups:
-  name: "elenola"
-  cable: "usb"
-  type: "usb"
-  device: ""
+  name: "jemima"
+  cable: "ether"
+  type: "net"
+  device: "jemima.internal.dezzanet.co.uk:3551"
+  batterylevel: 20
+  minutes: 10
   polltime: 6
-  batterylevel: 10
-  minutes: 3
-  nisip: 192.168.0.23
-  stattime: 60
+  nisip: 127.0.0.1
+  stattime: 0
 
 dns_forwarders:
   - 217.169.20.20

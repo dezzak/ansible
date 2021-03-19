@@ -1,11 +1,11 @@
 ---
 ups:
-  name: "elenola"
-  cable: "ether"
-  type: "net"
-  device: "elenola.internal.dezzanet.co.uk:3551"
-  batterylevel: 15
-  minutes: 7
+  name: "jemima"
+  cable: "usb"
+  type: "usb"
+  device: ""
   polltime: 6
-  nisip: 127.0.0.1
-  stattime: 0
+  batterylevel: 10
+  minutes: 3
+  nisip: 192.168.0.29
+  stattime: 60

@@ -1,11 +1,15 @@
 ---
 ups:
-  name: "elenola"
+  name: "jemima"
   cable: "ether"
   type: "net"
-  device: "elenola.internal.dezzanet.co.uk:3551"
+  device: "jemima.internal.dezzanet.co.uk:3551"
   batterylevel: 20
   minutes: 10
   polltime: 6
   nisip: 127.0.0.1
   stattime: 0
+
+dns_forwarders:
+  - 217.169.20.20
+  - 217.169.20.21
