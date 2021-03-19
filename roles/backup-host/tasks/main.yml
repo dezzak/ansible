@@ -33,8 +33,8 @@
     cron_file=backups
     name="push to s3"
     user=dezza
-    minute=0
-    hour=3
+    minute=33
+    hour=0
     state=present
     job=/usr/local/bin/push_backups.sh
 
