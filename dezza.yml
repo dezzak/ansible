@@ -58,12 +58,6 @@
   roles:
     - dns-server
 
-- hosts: dhcp-servers
-  become: yes
-  become_method: sudo
-  roles:
-    - dhcp-server
-
 - hosts: desktop
   become: yes
   become_method: sudo
@@ -73,3 +67,4 @@
     - desktop
     - software-development
     - iptables
+    - sainsburys-workstation

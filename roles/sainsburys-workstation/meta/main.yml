@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  role_name: sainsburys-workstation
+  author: Derek Kaye
+  description: Software and config required for using machine as a Sainsbury's workstation (WFH/BYOD)
+  license: GPLv3
+  min_ansible_version: 2.7
+
+  platforms:
+    - name: Debian
+      versions:
+        - buster
+
+dependencies:
+  - slack
