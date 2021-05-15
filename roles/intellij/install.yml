@@ -1,0 +1,33 @@
+---
+
+- name: Ensure directory exists
+  file:
+    path: "/opt/intellij/{{intellij_version}}-{{intellij_edition}}"
+    state: directory
+    mode: '0755'
+
+- name: Check if IntelliJ is already installed
+  stat:
+    path: '/opt/intellij/{{intellij_version}}-{{intellij_edition}}/bin'
+  register: installed_bin_dir
+
+- name: Download IntelliJ
+  get_url:
+    url: "https://download.jetbrains.com/idea/ideaIU-{{intellij_version}}.tar.gz"
+    dest: '/tmp/ideaIU-{{intellij_version}}.tar.gz'
+  when: not installed_bin_dir.stat.exists
+  register: download_result
+
+- name: Install IntelliJ
+  unarchive:
+    src: '/tmp/ideaIU-{{intellij_version}}.tar.gz'
+    dest: "/opt/intellij/{{intellij_version}}-{{intellij_edition}}"
+    extra_opts: '--strip-components=1'
+  when:
+    - download_result is not skipped
+    - download_result.state == 'file'
+
+- name: Add desktop entry
+  template:
+    src: intellij.desktop.j2
+    dest: "/usr/share/applications/intellij-idea-{{intellij_edition}}.desktop"
