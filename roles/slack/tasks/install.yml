@@ -11,7 +11,7 @@
   get_url:
     url: "https://downloads.slack-edge.com/linux_releases/slack-desktop-{{ slack_version }}-amd64.deb"
     dest: "/tmp/slack-desktop-{{ slack_version }}-amd64.deb"
-  when: slack_installed.rc == 1 or slack_installed.stdout.find(slack_version) == -1
+  when: slack_installed.rc == 1
   register: download_result
 
 - name: Install slack
