@@ -2,5 +2,5 @@
 
 - name: Ensure software development packages installed
   apt:
-    name: ['git', 'gcc', 'python-setuptools', 'sqlite3', 'php', 'php-sqlite3', 'php-gd']
+    name: ['git', 'gcc', 'python-setuptools', 'sqlite3', 'php-cli', 'php-sqlite3', 'php-gd']
     state: present
