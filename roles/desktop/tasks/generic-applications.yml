@@ -3,8 +3,7 @@
 - name: Ensure generic application packages are installed
   apt:
     name:
-      - chromium
-      - chromium-sandbox
+      - firefox
       - thunderbird
       - kmymoney
       - keepass2

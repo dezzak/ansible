@@ -13,15 +13,6 @@
       - gnome-themes-extra
     state: present
 
-#- name: Ensure slack dependencies installed
-#  apt: name={{ item }} state=installed
-#  with_items:
-#    - gconf2
-#    - gvfs-bin
-#    - apt-transport-https
-#    - libappindicator1
-#    - libcurl3
-
 - name: Ensure LaTeX and dependendencies are installed
   apt:
     name: ['texlive-full']
