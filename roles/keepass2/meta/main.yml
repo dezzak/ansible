@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  role_name: desktop
+  role_name: slack
   author: Derek Kaye
-  description: Common desktop software I use
+  description: Allows keepass2 and plugins to be installed
   license: GPLv3
   min_ansible_version: 2.7
 
@@ -12,6 +12,4 @@ galaxy_info:
         - buster
         - bullseye
 
-dependencies:
-  - zoom
-  - keepass2
+dependencies: []

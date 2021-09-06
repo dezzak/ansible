@@ -1,0 +1,31 @@
+---
+
+- name: Ensure keepass is installed
+  apt:
+    name:
+      - keepass2
+      - mono-complete
+      - xdotool
+    state: present
+
+- name: Check if KeePassHttp is installed
+  stat:
+    path: '/usr/lib/keepass2/Plugins/KeePassHttp.plgx'
+  register: keepasshttp_installed
+
+- name: Download KeePassHttp
+  get_url:
+    url: "https://raw.github.com/pfn/keepasshttp/master/KeePassHttp.plgx"
+    dest: '/tmp/KeePassHttp.plgx'
+  when: not keepasshttp_installed.stat.exists
+  register: download_result
+
+- name: Install KeePassHttp
+  copy:
+    dest: '/usr/lib/keepass2/Plugins/KeePassHttp.plgx'
+    mode: 0644
+    src: '/tmp/KeePassHttp.plgx'
+  when:
+    - download_result is not skipped
+    - download_result.state is defined
+    - download_result.state == 'file'

@@ -9,9 +9,6 @@
       - thunderbird
       - kmymoney
       - oxygen-icon-theme # for kmymoney --- move to own role
-      - keepass2
-      - mono-complete
-      - xdotool
       - evince
       - libreoffice
       - hyphen-en-gb
