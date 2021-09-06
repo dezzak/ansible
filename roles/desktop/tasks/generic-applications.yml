@@ -3,9 +3,12 @@
 - name: Ensure generic application packages are installed
   apt:
     name:
-      - firefox
+      - firefox-esr
+      - chromium
+      - chromium-sandbox
       - thunderbird
       - kmymoney
+      - oxygen-icon-theme # for kmymoney --- move to own role
       - keepass2
       - mono-complete
       - xdotool
