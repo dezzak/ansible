@@ -1,0 +1,23 @@
+---
+
+- name: Check if Zoom already installed
+  command: dpkg -l zoom
+  register: zoom_installed
+  changed_when: False
+  failed_when: False
+  check_mode: no
+
+- name: Download Zoom
+  get_url:
+    url: "https://zoom.us/client/latest/zoom_amd64.deb"
+    dest: "/tmp/zoom_amd64.deb"
+  when: zoom_installed.rc == 1
+  register: download_result
+
+- name: Install Zoom
+  apt:
+    deb: "/tmp/zoom_amd64.deb"
+  when:
+    - download_result is not skipped
+    - download_result.state is defined
+    - download_result.state == 'file'
