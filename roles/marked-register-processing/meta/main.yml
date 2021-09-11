@@ -1,18 +1,14 @@
 ---
 galaxy_info:
-  role_name: desktop
+  role_name: zoom
   author: Derek Kaye
-  description: Common desktop software I use
+  description: Sets up software needed for processing marked electoral registers
   license: GPLv3
   min_ansible_version: 2.7
 
   platforms:
     - name: Debian
       versions:
-        - buster
         - bullseye
 
-dependencies:
-  - zoom
-  - keepass2
-  - marked-register-processing
+dependencies: []
