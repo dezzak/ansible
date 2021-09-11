@@ -1,32 +1,35 @@
-[internal]
-henrietta.internal.dezzanet.co.uk
-jemima.internal.dezzanet.co.uk
-kimberly.internal.dezzanet.co.uk
-matilda.internal.dezzanet.co.uk
-
-[print-servers]
-henrietta.internal.dezzanet.co.uk
-
-[scan-servers]
-henrietta.internal.dezzanet.co.uk
-
-[media-servers]
-henrietta.internal.dezzanet.co.uk
-
-[backup-servers]
-henrietta.internal.dezzanet.co.uk
-
-[ups-hosts]
-jemima.internal.dezzanet.co.uk
-henrietta.internal.dezzanet.co.uk
-kimberly.internal.dezzanet.co.uk
-matilda.internal.dezzanet.co.uk
-
-[apt-cache-servers]
-kimberly.internal.dezzanet.co.uk
-
-[dns-servers]
-kimberly.internal.dezzanet.co.uk
-
-[desktop]
-matilda.internal.dezzanet.co.uk
+all:
+  children:
+    internal:
+      hosts:
+        henrietta.internal.dezzanet.co.uk:
+        jemima.internal.dezzanet.co.uk:
+        kimberly.internal.dezzanet.co.uk:
+        matilda.internal.dezzanet.co.uk:
+    print_servers:
+      hosts:
+        henrietta.internal.dezzanet.co.uk:
+    scan_servers:
+      hosts:
+        henrietta.internal.dezzanet.co.uk:
+    media_servers:
+      hosts:
+        henrietta.internal.dezzanet.co.uk:
+    backup_servers:
+      hosts:
+        henrietta.internal.dezzanet.co.uk:
+    ups_hosts:
+      hosts:
+        jemima.internal.dezzanet.co.uk:
+        henrietta.internal.dezzanet.co.uk:
+        kimberly.internal.dezzanet.co.uk:
+        matilda.internal.dezzanet.co.uk:
+    apt_cache_servers:
+      hosts:
+        kimberly.internal.dezzanet.co.uk:
+    dns_servers:
+      hosts:
+        kimberly.internal.dezzanet.co.uk:
+    desktop:
+      hosts:
+        matilda.internal.dezzanet.co.uk:

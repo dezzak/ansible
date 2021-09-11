@@ -9,19 +9,19 @@
   roles:
     - dot-files
 
-- hosts: print-servers
+- hosts: print_servers
   become: yes
   become_method: sudo
   roles:
     - print-server
 
-- hosts: scan-servers
+- hosts: scan_servers
   become: yes
   become_method: sudo
   roles:
     - scan-server
 
-- hosts: media-servers
+- hosts: media_servers
   become: yes
   become_method: sudo
   roles:
@@ -33,26 +33,26 @@
     - tv-management
     - get-iplayer
 
-- hosts: backup-servers
+- hosts: backup_servers
   become: yes
   become_method: sudo
   roles:
     - backup-host
     - { role: s3cmd }
 
-- hosts: ups-hosts
+- hosts: ups_hosts
   become: yes
   become_method: sudo
   roles:
     - apcupsd
 
-- hosts: apt-cache-servers
+- hosts: apt_cache_servers
   become: yes
   become_method: sudo
   roles:
     - apt-cacher-ng
 
-- hosts: dns-servers
+- hosts: dns_servers
   become: yes
   become_method: sudo
   roles:
