@@ -1,6 +1,4 @@
 [internal]
-demetria.internal.dezzanet.co.uk
-#felicity.internal.dezzanet.co.uk - don't include due to apt weirdness - need to research further
 henrietta.internal.dezzanet.co.uk
 jemima.internal.dezzanet.co.uk
 kimberly.internal.dezzanet.co.uk
@@ -19,7 +17,6 @@ henrietta.internal.dezzanet.co.uk
 henrietta.internal.dezzanet.co.uk
 
 [ups-hosts]
-demetria.internal.dezzanet.co.uk
 jemima.internal.dezzanet.co.uk
 henrietta.internal.dezzanet.co.uk
 kimberly.internal.dezzanet.co.uk
@@ -32,5 +29,4 @@ kimberly.internal.dezzanet.co.uk
 kimberly.internal.dezzanet.co.uk
 
 [desktop]
-demetria.internal.dezzanet.co.uk
 matilda.internal.dezzanet.co.uk
