@@ -12,4 +12,5 @@
       - evince
       - libreoffice
       - hyphen-en-gb
+      - gimp
     state: present
