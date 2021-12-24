@@ -1,0 +1,34 @@
+---
+
+- name: Ensure directory exists
+  file:
+    path: "/opt/pycharm/{{pycharm_version}}"
+    state: directory
+    mode: '0755'
+
+- name: Check if PyCharm is already installed
+  stat:
+    path: '/opt/pycharm/{{pycharm_version}}/bin'
+  register: installed_bin_dir
+
+- name: Download PyCharm
+  get_url:
+    url: "https://download.jetbrains.com/python/pycharm-professional-{{pycharm_version}}.tar.gz"
+    dest: '/tmp/pycharm-{{pycharm_version}}.tar.gz'
+  when: not installed_bin_dir.stat.exists
+  register: download_result
+
+- name: Install PyCharm
+  unarchive:
+    src: '/tmp/pycharm-{{pycharm_version}}.tar.gz'
+    dest: "/opt/pycharm/{{pycharm_version}}"
+    extra_opts: '--strip-components=1'
+  when:
+    - download_result is not skipped
+    - download_result.state is defined
+    - download_result.state == 'file'
+
+- name: Add desktop entry
+  template:
+    src: pycharm.desktop.j2
+    dest: "/usr/share/applications/pycharm-{{pycharm_version}}.desktop"
