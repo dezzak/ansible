@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  role_name: software-development
+  role_name: clion
   author: Derek Kaye
-  description: Software dev tools
+  description: Allows CLion to be installed
   license: GPLv3
   min_ansible_version: 2.7
 
@@ -12,8 +12,4 @@ galaxy_info:
         - buster
         - bullseye
 
-dependencies:
-  - intellij
-  - phpstorm
-  - pycharm
-  - clion
+dependencies: []
