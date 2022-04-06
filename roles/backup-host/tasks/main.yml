@@ -38,3 +38,8 @@
     state=present
     job=/usr/local/bin/push_backups.sh
 
+- name: Ensure python3 is the default
+  community.general.alternatives:
+    name: python
+    path: /usr/bin/python3
+    link: /usr/bin/python
