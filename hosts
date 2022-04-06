@@ -3,6 +3,7 @@ all:
     internal:
       hosts:
         henrietta.internal.dezzanet.co.uk:
+          ansible_python_interpreter: auto
         jemima.internal.dezzanet.co.uk:
         kimberly.internal.dezzanet.co.uk:
         matilda.internal.dezzanet.co.uk:

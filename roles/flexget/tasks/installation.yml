@@ -19,8 +19,8 @@
 
 - name: Ensure that TransmissionRPC is installed
   pip:
-    name: transmissionrpc
-    state: latest
+    name: transmission-rpc>3.0
+    state: present
     executable: /usr/bin/pip3
   notify: restart flexget
 
