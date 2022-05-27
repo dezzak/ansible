@@ -19,15 +19,6 @@ cd $BACKUP_ROOT
 # Push to S3
 /usr/local/bin/s3cmd put "${ENCRYPTED_ARCHIVE_PATH}" "${BACKUP_BUCKET}"
 
-# Rotate archive
-/usr/local/bin/s3cmd ls "${BACKUP_BUCKET}" | grep --quiet "${OLD_ARCHIVE_PATH}"
-if [ ! $? ]; then
-    #echo "Would remove from bucket"
-    /usr/local/bin/s3cmd del "${BACKUP_BUCKET}${OLD_ARCHIVE_PATH}"
-else
-    echo "Not found on remote"
-fi
-
 # Remove created
 if [ -e "$ENCRYPTED_ARCHIVE_PATH" ]; then
     #echo "Would remove $ENCRYPTED_ARCHIVE_PATH"
