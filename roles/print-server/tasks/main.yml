@@ -7,7 +7,7 @@
 
 - name: Ensure that cups is installed
   apt:
-    name: ['cups', 'cups-client']
+    name: ['cups', 'cups-client', 'printer-driver-gutenprint']
     state: present
   notify:
     - restart cups
