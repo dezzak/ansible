@@ -10,7 +10,6 @@
       - ffmpeg
       - atomicparsley
       - ffmpeg2theora
-      - libav-tools
       - libwww-perl
       - libxml-simple-perl
       - libmojolicious-perl

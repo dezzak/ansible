@@ -13,3 +13,11 @@
     group=debian-transmission
     mode=0600
   notify: reload transmission
+
+- name: Ensure transmission deamon set to use correct config
+  lineinfile:
+    dest: /lib/systemd/system/transmission-daemon.service
+    regexp: ^ExecStart
+    line: "ExecStart=/usr/bin/transmission-daemon -f --log-error -g /etc/transmission-daemon"
+  notify:
+    - restart transmission

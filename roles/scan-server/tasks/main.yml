@@ -2,7 +2,7 @@
 
 - name: Ensure that saned is installed
   apt:
-    name: ['sane-utils', 'libsane', 'libsane-extras']
+    name: ['sane-utils', 'libsane']
     state: present
   notify:
     - restart sane

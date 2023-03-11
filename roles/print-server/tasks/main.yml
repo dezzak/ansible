@@ -1,5 +1,11 @@
 ---
 
+- name: Ensure that printer admin group exists
+  group:
+    name: lpadmin
+    state: present
+    system: true
+
 - name: Ensure that printer admins are configured
   user: name={{ item }} groups=lpadmin append=yes
   with_items:
