@@ -15,6 +15,7 @@
       - libmojolicious-perl
       - git
       - xsltproc
+      - postfix
     state: present
 
 - name: Ensure that gip is latest version

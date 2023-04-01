@@ -2,7 +2,11 @@
 
 - name: Ensure dependencies are installed
   apt:
-    name: ['perl', 'git', 'cpanminus']
+    name:
+      - perl
+      - git
+      - cpanminus
+      - postfix
     state: present
 
 - name: Ensure cpan dependencies are installed
