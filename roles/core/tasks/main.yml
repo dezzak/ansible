@@ -16,7 +16,7 @@
 
 - name: Install core software
   apt:
-    name: ['htop', 'screen', 'fail2ban', 'openntpd', 'aptitude']
+    name: ['htop', 'screen', 'fail2ban', 'openntpd', 'aptitude', 'mailutils']
     state: present
 
 - name: Ensure calendar installed
