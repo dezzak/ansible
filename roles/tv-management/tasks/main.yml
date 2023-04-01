@@ -24,15 +24,15 @@
 - name: Ensure config present
   template:
     src=tv-management.ini.j2
-    dest=/home/dezza/.tv-management.ini
-    group=dezza
-    owner=dezza
+    dest=/home/{{ tv_management_user }}/.tv-management.ini
+    group={{ tv_management_group }}
+    owner={{ tv_management_user }}
     mode=0600
 
-- name: Ensure torrent moitor script set up
+- name: Ensure torrent monitor script set up
   cron:
     cron_file=tv-management
-    user=dezza
+    user={{ tv_management_user }}
     minute=*/6
     state=present
     job="{{ tv_management.install_dir }}/torrent_monitor.pl"
@@ -41,9 +41,15 @@
 - name: Ensure iplayer renamer script set up
   cron:
     cron_file=tv-management
-    user=dezza
+    user={{ tv_management_user }}
     minute=*/5
     state=present
     job="{{ tv_management.install_dir }}/iplayer_renamer.pl"
     name="iplayer renamer"
 
+- name: Ensure management user in transmission group
+  user:
+    append: true
+    groups:
+      - "{{ transmission_group }}"
+    name: "{{ tv_management_user }}"
