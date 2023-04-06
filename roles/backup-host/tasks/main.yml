@@ -1,5 +1,10 @@
 ---
 
+- name: Ensure dependencies are installed
+  apt:
+    name: ['rsync']
+    state: present
+
 - name: "Ensure backup root dir present"
   file:
      path="{{ backup_base_dir }}"
