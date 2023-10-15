@@ -1,0 +1,15 @@
+---
+
+- name: Ensure that gip dependencies are installed
+  apt:
+    name:
+      - atomicparsley
+      - ffmpeg
+      - git
+      - libmojolicious-perl
+      - libxml-simple-perl
+      - libwww-perl
+      - perl
+      - postfix
+      - xsltproc
+    state: present
