@@ -25,7 +25,6 @@ samba:
     workgroup: "DEZZANET"
     server_string: "%h server"
     dns_proxy: "no"
-    interfaces: "eth0"
     max_log_size: "1000"
     syslog: "0"
     panic_action: "/usr/share/samba/panic-action %d"
