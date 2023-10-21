@@ -11,11 +11,18 @@
       - virtualenv
     state: present
 
-- name: Ensure that flexget and dependencies are installed via pip
+- name: Ensure that transmission rpc is a compatible version
   pip:
-    name:
-      - flexget
-      - transmission-rpc
+    name: transmission-rpc
+    state: present
+    version: 4.3.1
+    virtualenv: "{{ venv_home }}"
+    virtualenv_site_packages: true
+  notify: restart flexget
+
+- name: Ensure that flexget is installed via pip
+  pip:
+    name: flexget
     state: present
     virtualenv: "{{ venv_home }}"
     virtualenv_site_packages: true
