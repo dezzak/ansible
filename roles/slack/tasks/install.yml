@@ -1,24 +1,43 @@
 ---
 
-- name: Check if Slack already installed
-  command: dpkg -l slack-desktop
-  register: slack_installed
-  changed_when: False
-  failed_when: False
-  check_mode: no
+- name: Ensure keyrings directory is present
+  file:
+    path=/etc/apt/keyrings
+    state=directory
 
-- name: Download slack
+- name: Check if key is present
+  stat:
+    path: '/etc/apt/keyrings/slacktechnologies_slack-archive-keyring.gpg'
+  register: apt_key_installed
+
+- name: Download signing key
   get_url:
-    url: "https://downloads.slack-edge.com/releases/linux/{{ slack_version }}/prod/x64/slack-desktop-{{ slack_version }}-amd64.deb"
-    dest: "/tmp/slack-desktop-{{ slack_version }}-amd64.deb"
-  when: slack_installed.rc == 1
+    url: "https://packagecloud.io/slacktechnologies/slack/gpgkey"
+    dest: '/tmp/slack.asc'
+  when: not apt_key_installed.stat.exists
   register: download_result
 
-- name: Install slack
-  apt:
-    deb: "/tmp/slack-desktop-{{ slack_version }}-amd64.deb"
+- name: Dearmour key
+  ansible.builtin.shell: gpg --dearmor -o /etc/apt/keyrings/slacktechnologies_slack-archive-keyring.gpg /tmp/slack.asc
   when:
     - download_result is not skipped
     - download_result.state is defined
     - download_result.state == 'file'
-    - not ansible_check_mode
+
+- name: Ensure proxy is avoided
+  copy:
+    src=apt-config
+    dest=/etc/apt/apt.conf.d/40slack
+    owner=root
+    group=root
+    mode=0644
+
+- name: Ensure apt source is configured
+  apt_repository:
+    filename: slacktechnologies_slack
+    repo: deb [signed-by=/etc/apt/keyrings/slacktechnologies_slack-archive-keyring.gpg] https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
+
+- name: Install slack
+  package:
+    name:  slack-desktop
+    state: present

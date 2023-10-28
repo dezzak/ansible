@@ -7,19 +7,27 @@
 
 - name: Check if key is present
   stat:
-    path: '/usr/local/share/keyrings/josm-apt.asc'
+    path: '/usr/local/share/keyrings/josm-apt.gpg'
   register: apt_key_installed
 
 - name: Download signing key
   get_url:
     url: "https://josm.openstreetmap.de/josm-apt.key"
-    dest: '/usr/local/share/keyrings/josm-apt.asc'
+    dest: '/tmp/josm-apt.asc'
   when: not apt_key_installed.stat.exists
+  register: download_result
+
+- name: Dearmour key
+  ansible.builtin.shell: gpg --dearmor -o /usr/local/share/keyrings/josm-apt.gpg /tmp/josm-apt.asc
+  when:
+    - download_result is not skipped
+    - download_result.state is defined
+    - download_result.state == 'file'
 
 - name: Ensure apt source is configured
   apt_repository:
     filename: josm
-    repo: deb [signed-by=/usr/local/share/keyrings/josm-apt.asc] http://HTTPS///josm.openstreetmap.de/apt alldist universe
+    repo: deb [signed-by=/usr/local/share/keyrings/josm-apt.gpg] http://HTTPS///josm.openstreetmap.de/apt alldist universe
 
 - name:  Ensure josm is installed
   package:
