@@ -16,3 +16,4 @@ dependencies:
   - zoom
   - keepass2
   - marked-register-processing
+  - osm-edit

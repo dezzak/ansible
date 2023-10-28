@@ -1,0 +1,27 @@
+---
+
+- name: Ensure keyrings directory is present
+  file:
+    path=/usr/local/share/keyrings
+    state=directory
+
+- name: Check if key is present
+  stat:
+    path: '/usr/local/share/keyrings/josm-apt.asc'
+  register: apt_key_installed
+
+- name: Download signing key
+  get_url:
+    url: "https://josm.openstreetmap.de/josm-apt.key"
+    dest: '/usr/local/share/keyrings/josm-apt.asc'
+  when: not apt_key_installed.stat.exists
+
+- name: Ensure apt source is configured
+  apt_repository:
+    filename: josm
+    repo: deb [signed-by=/usr/local/share/keyrings/josm-apt.asc] http://HTTPS///josm.openstreetmap.de/apt alldist universe
+
+- name:  Ensure josm is installed
+  package:
+    name:  josm
+    state: present
