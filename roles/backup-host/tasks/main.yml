@@ -2,7 +2,9 @@
 
 - name: Ensure dependencies are installed
   apt:
-    name: ['rsync']
+    name:
+      - rsync
+      - python3-dateutil
     state: present
 
 - name: "Ensure backup root dir present"
