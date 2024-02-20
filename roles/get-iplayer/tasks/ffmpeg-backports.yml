@@ -1,7 +1,7 @@
 ---
 
-- include: ffmpeg-backports-jessie.yml
+- import_tasks: ffmpeg-backports-jessie.yml
   when: ansible_distribution_major_version == '8'
 
-- include: ffmpeg-backports-wheezy.yml
+- import_tasks: ffmpeg-backports-wheezy.yml
   when: ansible_distribution_major_version == '7'

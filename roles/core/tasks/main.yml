@@ -33,4 +33,4 @@
     group=root
     mode=0644
 
-- include: journald.yml
+- import_tasks: journald.yml

@@ -18,4 +18,4 @@
     repo: 'https://github.com/dezzak/dot-files.git'
     dest: /srv/dot-files
 
-- include: files.yml
+- import_tasks: files.yml

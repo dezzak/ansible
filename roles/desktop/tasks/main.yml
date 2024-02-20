@@ -18,8 +18,8 @@
     name: ['texlive-full']
     state: present
 
-- include: generic-applications.yml
-- include: scan-client.yml
-- include: print-client.yml
-- include: cron.yml
-- include: family-history.yml
+- import_tasks: generic-applications.yml
+- import_tasks: scan-client.yml
+- import_tasks: print-client.yml
+- import_tasks: cron.yml
+- import_tasks: family-history.yml
