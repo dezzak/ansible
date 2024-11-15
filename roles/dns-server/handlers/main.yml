@@ -4,3 +4,4 @@
   service:
     name=bind9
     state=restarted
+  when: not ansible_check_mode
