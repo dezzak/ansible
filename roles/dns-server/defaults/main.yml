@@ -3,3 +3,12 @@
 dns_forwarders:
   - 8.8.8.8
   - 8.8.4.4
+
+dns_zones: []
+
+default_soa: "ns1.example.com. hostmaster.example.com."
+default_zone_ns: "ns1.example.com."
+
+blacklist_a: "192.0.2.99"
+blacklist_aaaa: "2001:db8::99"
+blacklist_zones: []

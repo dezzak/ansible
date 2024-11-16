@@ -1,0 +1,13 @@
+$TTL 3600 ; 1 hour
+@ IN SOA {{ soa }} (
+                2023120703 ; serial
+                7200       ; refresh (2 hour)
+                120        ; retry (2 min)
+                2419200    ; expire (4 weeks)
+                3600       ; minimum (1 hour)
+                );
+        NS   {{ zone_ns }}
+        A    {{ blacklist_a }};
+*   IN  A    {{ blacklist_a }};
+        AAAA {{ blacklist_aaaa }};
+*   IN  AAAA {{ blacklist_aaaa }};

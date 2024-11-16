@@ -1,0 +1,210 @@
+---
+dns_forwarders:
+  - 217.169.20.20
+  - 217.169.20.21
+
+default_soa: "kimberly.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
+default_zone_ns: "kimberly.internal.dezzanet.co.uk."
+blacklist_a: "192.168.99.99"
+blacklist_aaaa: "2001:8b0:caf4::99:99"
+blacklist_zones:
+  - "doubleclick.net"
+  - "google-analytics.com"
+  - "scorecardresearch.com"
+  - "my.cbcloud.de"
+  - "printix.net"
+  - "sign-in.printix.net"
+
+dns_zones:
+  - name: "internal.dezzanet.co.uk"
+    ttl: "604800"
+    zone: "internal.dezzanet.co.uk"
+    soa: "kimberly.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
+    serial: "2023120902"
+    refresh: "604800"
+    retry: "86400"
+    expire: "2419200"
+    minimum: "604800"
+    bare_records:
+      - name: ""
+        entries:
+          - type: "NS"
+            value: "kimberly.internal.dezzanet.co.uk."
+          - type: "A"
+            value: "192.168.0.32"
+    origin_records:
+      - origin: "internal.dezzanet.co.uk."
+        records:
+          - name: "felicity"
+            entries:
+              - type: "A"
+                value: "192.168.0.25"
+              - type: "AAAA"
+                value: "2001:8b0:caf4::ba27:ebff:fe2c:97d0"
+          - name: "henrietta"
+            entries:
+              - type: "A"
+                value: "192.168.0.27"
+              - type: "AAAA"
+                value: "2001:8b0:caf4::3:11ff:fe66:5b93"
+          - name: "jemima"
+            entries:
+              - type: "A"
+                value: "192.168.0.29"
+              - type: "AAAA"
+                value: "2001:8b0:caf4::9eb6:54ff:fe09:32ca"
+          - name: "kimberly"
+            entries:
+              - type: "A"
+                value: "192.168.0.32"
+              - type: "AAAA"
+                value: "2001:8b0:caf4:0:ec4f:37ff:fe42:8337"
+          - name: "lorella"
+            entries:
+              - type: "A"
+                value: "192.168.0.33"
+          - name: "matilda"
+            entries:
+              - type: "A"
+                value: "192.168.0.34"
+              - type: "AAAA"
+                value: "2001:8b0:caf4::d6e:3b32:fbe:5347"
+          - name: "nicoletta"
+            entries:
+              - type: "A"
+                value: "192.168.0.35"
+              - type: "AAAA"
+                value: "2001:8b0:caf4::5074:f2ff:feb1:a87f"
+          - name: "derek-phone"
+            entries:
+              - type: "A"
+                value: "192.168.0.22"
+          - name: "derek-phone-2"
+            entries:
+              - type: "A"
+                value: "192.168.0.23"
+          - name: "work-laptop"
+            entries:
+              - type: "A"
+                value: "192.168.0.30"
+          - name: "work-laptop-wifi"
+            entries:
+              - type: "A"
+                value: "192.168.0.31"
+              - type: "AAAA"
+                value: "2001:8b0:caf4::31"
+          - name: "kirsty"
+            entries:
+              - type: "A"
+                value: "192.168.0.40"
+          - name: "kirsty-laptop"
+            entries:
+              - type: "A"
+                value: "192.168.0.41"
+          - name: "kirsty-work-laptop"
+            entries:
+              - type: "A"
+                value: "192.168.0.42"
+          - name: "adelie"
+            entries:
+              - type: "A"
+                value: "192.168.0.43"
+          - name: "kirsty-phone"
+            entries:
+              - type: "A"
+                value: "192.168.0.44"
+          - name: "kirsty-phone-2"
+            entries:
+              - type: "A"
+                value: "192.168.0.45"
+          - name: "homeassistant"
+            entries:
+              - type: "A"
+                value: "192.168.0.164"
+              - type: "AAAA"
+                value: "2001:8b0:caf4:0:daa6:79bc:92e:c7ac"
+          - name: "osmc"
+            entries:
+              - type: "CNAME"
+                value: "nicoletta.internal.dezzanet.co.uk."
+  - name: "192.168.0"
+    ttl: "604800"
+    zone: "0.168.192.in-addr.arpa"
+    soa: "kimberly.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
+    serial: "2023120701"
+    refresh: "604800"
+    retry: "86400"
+    expire: "2419200"
+    minimum: "604800"
+    bare_records:
+      - name: ""
+        entries:
+          - type: "NS"
+            value: "kimberly.internal.dezzanet.co.uk."
+    origin_records:
+      - origin: "0.168.192.in-addr.arpa."
+        records:
+          - name: "20"
+            entries:
+              - type: "PTR"
+                value: "demetria.internal.dezzanet.co.uk."
+          - name: "22"
+            entries:
+              - type: "PTR"
+                value: "derek-phone.internal.dezzanet.co.uk."
+          - name: "23"
+            entries:
+              - type: "PTR"
+                value: "elenola.internal.dezzanet.co.uk."
+          - name: "25"
+            entries:
+              - type: "PTR"
+                value: "felicity.internal.dezzanet.co.uk."
+          - name: "27"
+            entries:
+              - type: "PTR"
+                value: "henrietta.internal.dezzanet.co.uk."
+          - name: "29"
+            entries:
+              - type: "PTR"
+                value: "jemima.internal.dezzant.co.uk."
+          - name: "30"
+            entries:
+              - type: "PTR"
+                value: "work-laptop.internal.dezzanet.co.uk."
+          - name: "31"
+            entries:
+              - type: "PTR"
+                value: "work-laptop-wifi.internal.dezzanet.co.uk."
+          - name: "32"
+            entries:
+              - type: "PTR"
+                value: "kimberly.internal.dezzanet.co.uk."
+          - name: "33"
+            entries:
+              - type: "PTR"
+                value: "lorella.internal.dezzanet.co.uk."
+          - name: "34"
+            entries:
+              - type: "PTR"
+                value: "matilda.internal.dezzanet.co.uk."
+          - name: "35"
+            entries:
+              - type: "PTR"
+                value: "nicoletta.internal.dezzanet.co.uk."
+          - name: "40"
+            entries:
+              - type: "PTR"
+                value: "kirsty.internal.dezzanet.co.uk."
+          - name: "41"
+            entries:
+              - type: "PTR"
+                value: "kirsty-laptop.internal.dezzanet.co.uk."
+          - name: "44"
+            entries:
+              - type: "PTR"
+                value: "kirsty-phone.internal.dezzanet.co.uk."
+          - name: "164"
+            entries:
+              - type: "PTR"
+                value: "homeassistant.internal.dezzanet.co.uk."

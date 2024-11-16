@@ -11,5 +11,49 @@
     owner=root
     group=bind
     mode=0644
-    validate="/usr/sbin/named-checkconf %s"
+    validate="/usr/bin/named-checkconf %s"
+  notify: restart dns
+
+- name: Set up zone files
+  template:
+    src: zone.j2
+    dest: "/etc/bind/db.{{ item.name }}"
+    owner: root
+    group: bind
+    mode: 0644
+    validate: "/usr/bin/named-checkzone {{ item.zone }} %s"
+  with_items: "{{ dns_zones }}"
+  notify: restart dns
+
+- name: Set up blacklilst zone
+  template:
+    src: db.blacklist.j2
+    dest: "/etc/bind/db.blacklist"
+    owner: root
+    group: bind
+    mode: 0644
+    validate: "/usr/bin/named-checkzone @ %s"
+  vars:
+    soa: "{{ default_soa }}"
+    zone_ns: "{{ default_zone_ns }}"
+  notify: restart dns
+
+- name: Configure blacklist
+  template:
+    src: zones.blacklist.j2
+    dest: /etc/bind/zones.blacklist
+    owner: root
+    group: bind
+    mode: 0644
+    validate: "/usr/bin/named-checkconf %s"
+  notify: restart dns
+
+- name: Ensure local config is configured
+  template:
+    src: named.conf.local.j2
+    dest: /etc/bind/named.conf.local
+    owner: root
+    group: bind
+    mode: 0644
+    validate: "/usr/bin/named-checkconf %s"
   notify: restart dns

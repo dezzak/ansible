@@ -1,0 +1,20 @@
+$ORIGIN .
+$TTL {{ item.ttl }} ;
+{{ item.zone }} IN SOA {{ item.soa }} (
+                {{ item.serial }} ; serial
+                {{ item.refresh }} ; refresh
+                {{ item.retry }} ; retry
+                {{ item.expire }} ; expire
+                {{ item.minimum}} ; minimum
+                )
+{% for record in item.bare_records %}
+{{ record.name }}{% for entry in record.entries %}    {{ entry.type }}    {{ entry.value }}
+{% endfor %}
+{% endfor %}
+{% for section in item.origin_records %}
+$ORIGIN {{ section.origin }}
+{% for record in section.records %}
+{{ record.name }}{% for entry in record.entries %}    {{ entry.type }}    {{ entry.value }}
+{% endfor %}
+{% endfor %}
+{% endfor %}
