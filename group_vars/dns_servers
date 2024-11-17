@@ -20,7 +20,7 @@ dns_zones:
     ttl: "604800"
     zone: "internal.dezzanet.co.uk"
     soa: "kimberly.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2023120902"
+    serial: "2024111701"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -35,12 +35,6 @@ dns_zones:
     origin_records:
       - origin: "internal.dezzanet.co.uk."
         records:
-          - name: "felicity"
-            entries:
-              - type: "A"
-                value: "192.168.0.25"
-              - type: "AAAA"
-                value: "2001:8b0:caf4::ba27:ebff:fe2c:97d0"
           - name: "henrietta"
             entries:
               - type: "A"
@@ -59,10 +53,6 @@ dns_zones:
                 value: "192.168.0.32"
               - type: "AAAA"
                 value: "2001:8b0:caf4:0:ec4f:37ff:fe42:8337"
-          - name: "lorella"
-            entries:
-              - type: "A"
-                value: "192.168.0.33"
           - name: "matilda"
             entries:
               - type: "A"
@@ -73,8 +63,6 @@ dns_zones:
             entries:
               - type: "A"
                 value: "192.168.0.35"
-              - type: "AAAA"
-                value: "2001:8b0:caf4::5074:f2ff:feb1:a87f"
           - name: "derek-phone"
             entries:
               - type: "A"
@@ -91,8 +79,6 @@ dns_zones:
             entries:
               - type: "A"
                 value: "192.168.0.31"
-              - type: "AAAA"
-                value: "2001:8b0:caf4::31"
           - name: "kirsty"
             entries:
               - type: "A"
@@ -117,6 +103,50 @@ dns_zones:
             entries:
               - type: "A"
                 value: "192.168.0.45"
+          - name: "google-home-kitchen"
+            entries:
+              - type: "A"
+                value: "192.168.0.50"
+          - name: "google-tv-living-room"
+            entries:
+              - type: "A"
+                value: "192.168.0.51"
+          - name: "yoto-player"
+            entries:
+              - type: "A"
+                value: "192.168.0.52"
+          - name: "google-speaker-bedroom"
+            entries:
+              - type: "A"
+                value: "192.168.0.53"
+          - name: "smart-plug-1"
+            entries:
+              - type: "A"
+                value: "192.168.0.70"
+          - name: "smart-plug-2"
+            entries:
+              - type: "A"
+                value: "192.168.0.71"
+          - name: "smart-plug-3"
+            entries:
+              - type: "A"
+                value: "192.168.0.72"
+          - name: "smart-plug-4"
+            entries:
+              - type: "A"
+                value: "192.168.0.73"
+          - name: "smart-plug-5"
+            entries:
+              - type: "A"
+                value: "192.168.0.74"
+          - name: "solax-inverter"
+            entries:
+              - type: "A"
+                value: "192.168.0.75"
+          - name: "glow-ihd"
+            entries:
+              - type: "A"
+                value: "192.168.0.77"
           - name: "homeassistant"
             entries:
               - type: "A"
@@ -131,7 +161,7 @@ dns_zones:
     ttl: "604800"
     zone: "0.168.192.in-addr.arpa"
     soa: "kimberly.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2023120701"
+    serial: "2024111701"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -144,22 +174,10 @@ dns_zones:
     origin_records:
       - origin: "0.168.192.in-addr.arpa."
         records:
-          - name: "20"
-            entries:
-              - type: "PTR"
-                value: "demetria.internal.dezzanet.co.uk."
           - name: "22"
             entries:
               - type: "PTR"
                 value: "derek-phone.internal.dezzanet.co.uk."
-          - name: "23"
-            entries:
-              - type: "PTR"
-                value: "elenola.internal.dezzanet.co.uk."
-          - name: "25"
-            entries:
-              - type: "PTR"
-                value: "felicity.internal.dezzanet.co.uk."
           - name: "27"
             entries:
               - type: "PTR"
@@ -180,10 +198,6 @@ dns_zones:
             entries:
               - type: "PTR"
                 value: "kimberly.internal.dezzanet.co.uk."
-          - name: "33"
-            entries:
-              - type: "PTR"
-                value: "lorella.internal.dezzanet.co.uk."
           - name: "34"
             entries:
               - type: "PTR"
@@ -204,6 +218,50 @@ dns_zones:
             entries:
               - type: "PTR"
                 value: "kirsty-phone.internal.dezzanet.co.uk."
+          - name: "50"
+            entries:
+              - type: "PTR"
+                value: "google-home-kitchen.internal.dezzanet.co.uk."
+          - name: "51"
+            entries:
+              - type: "PTR"
+                value: "google-tv-living-room.internal.dezzanet.co.uk."
+          - name: "52"
+            entries:
+              - type: "PTR"
+                value: "yoto-player.internal.dezzanet.co.uk."
+          - name: "53"
+            entries:
+              - type: "PTR"
+                value: "google-speaker-bedroom.internal.dezzanet.co.uk."
+          - name: "70"
+            entries:
+              - type: "PTR"
+                value: "smart-plug-1.internal.dezzanet.co.uk."
+          - name: "71"
+            entries:
+              - type: "PTR"
+                value: "smart-plug-2.internal.dezzanet.co.uk."
+          - name: "72"
+            entries:
+              - type: "PTR"
+                value: "smart-plug-3.internal.dezzanet.co.uk."
+          - name: "73"
+            entries:
+              - type: "PTR"
+                value: "smart-plug-4.internal.dezzanet.co.uk."
+          - name: "74"
+            entries:
+              - type: "PTR"
+                value: "smart-plug-5.internal.dezzanet.co.uk."
+          - name: "75"
+            entries:
+              - type: "PTR"
+                value: "solax-inverter.internal.dezzanet.co.uk."
+          - name: "77"
+            entries:
+              - type: "PTR"
+                value: "glow-ihd.internal.dezzanet.co.uk."
           - name: "164"
             entries:
               - type: "PTR"
