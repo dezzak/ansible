@@ -20,7 +20,7 @@ dns_zones:
     ttl: "604800"
     zone: "internal.dezzanet.co.uk"
     soa: "kimberly.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2024111701"
+    serial: "2024111702"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -157,6 +157,10 @@ dns_zones:
             entries:
               - type: "CNAME"
                 value: "nicoletta.internal.dezzanet.co.uk."
+          - name: "apt-cache"
+            entries:
+              - type: "CNAME"
+                value: "kimberly.internal.dezzanet.co.uk."
   - name: "192.168.0"
     ttl: "604800"
     zone: "0.168.192.in-addr.arpa"
