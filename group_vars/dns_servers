@@ -20,7 +20,7 @@ dns_zones:
     ttl: "604800"
     zone: "internal.dezzanet.co.uk"
     soa: "kimberly.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2024111702"
+    serial: "2024112204"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -35,6 +35,18 @@ dns_zones:
     origin_records:
       - origin: "internal.dezzanet.co.uk."
         records:
+          - name: "dns1"
+            entries:
+              - type: "A"
+                value: "192.168.0.11"
+              - type: "AAAA"
+                value: "2001:8b0:caf4::be24:11ff:fe1a:46a8"
+          - name: "apt-cache-1"
+            entries:
+              - type: "A"
+                value: "192.168.0.12"
+              - type: "AAAA"
+                value: "2001:8b0:caf4::be24:11ff:fea7:37a5"
           - name: "henrietta"
             entries:
               - type: "A"
@@ -160,12 +172,12 @@ dns_zones:
           - name: "apt-cache"
             entries:
               - type: "CNAME"
-                value: "kimberly.internal.dezzanet.co.uk."
+                value: "apt-cache-1.internal.dezzanet.co.uk."
   - name: "192.168.0"
     ttl: "604800"
     zone: "0.168.192.in-addr.arpa"
     soa: "kimberly.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2024111701"
+    serial: "2024112202"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -178,6 +190,14 @@ dns_zones:
     origin_records:
       - origin: "0.168.192.in-addr.arpa."
         records:
+          - name: "11"
+            entries:
+              - type: "PTR"
+                value: "dns1.internal.dezzanet.co.uk."
+          - name: "12"
+            entries:
+              - type: "PTR"
+                value: "apt-cache-1.internal.dezzanet.co.uk."
           - name: "22"
             entries:
               - type: "PTR"
