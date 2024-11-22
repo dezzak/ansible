@@ -2,3 +2,4 @@
 
 - name: restart aptcacher
   service: name=apt-cacher-ng state=restarted
+  when: not ansible_check_mode
