@@ -1,0 +1,124 @@
+dbhome /var/lib/squidguard/db/
+logdir /var/log/squidguard
+
+dest adult {
+        domainlist blacklists/adult/domains
+}
+dest violence {
+        domainlist blacklists/violence/domains
+}
+dest audio-video {
+        domainlist blacklists/audio-video/domains
+}
+dest bank {
+        domainlist blacklists/bank/domains
+}
+dest bitcoin {
+        domainlist blacklists/bitcoin/domains
+}
+dest blog {
+        domainlist blacklists/blog/domains
+}
+dest celebrity {
+        domainlist blacklists/celebrity/domains
+}
+dest chat {
+        domainlist blacklists/chat/domains
+}
+dest cleaning {
+        domainlist blacklists/cleaning/domains
+}
+dest cryptojacking {
+        domainlist blacklists/cryptojacking/domains
+}
+dest dangerous_material {
+        domainlist blacklists/dangerous_material/domains
+}
+dest dating {
+        domainlist blacklists/dating/domains
+}
+dest ddos {
+        domainlist blacklists/ddos/domains
+}
+dest dialer {
+        domainlist blacklists/dialer/domains
+}
+dest doh {
+        domainlist blacklists/doh/domains
+}
+dest download {
+        domainlist blacklists/download/domains
+}
+dest drugs {
+        domainlist blacklists/drugs/domains
+}
+dest fakenews {
+        domainlist blacklists/fakenews/domains
+}
+dest filehosting {
+        domainlist blacklists/filehosting/domains
+}
+dest forums {
+        domainlist blacklists/forums/domains
+}
+dest gambling {
+        domainlist blacklists/gambling/domains
+}
+dest games {
+        domainlist blacklists/games/domains
+}
+dest hacking {
+        domainlist blacklists/hacking/domains
+}
+dest lingerie {
+        domainlist blacklists/lingerie/domains
+}
+dest malware {
+        domainlist blacklists/malware/domains
+}
+dest manga {
+        domainlist blacklists/manga/domains
+}
+dest marketingware {
+        domainlist blacklists/marketingware/domains
+}
+dest mixed_adult {
+        domainlist blacklists/mixed_adult/domains
+}
+dest phishing {
+        domainlist blacklists/phishing/domains
+}
+dest redirector {
+        domainlist blacklists/redirector/domains
+}
+dest remote-control {
+        domainlist blacklists/remote-control/domains
+}
+dest shopping {
+        domainlist blacklists/shopping/domains
+}
+dest shortener {
+        domainlist blacklists/shortener/domains
+}
+dest social_networks {
+        domainlist blacklists/social_networks/domains
+}
+dest stalkerware {
+        domainlist blacklists/stalkerware/domains
+}
+dest vpn {
+        domainlist blacklists/vpn/domains
+}
+dest warez {
+        domainlist blacklists/warez/domains
+}
+dest webmail {
+        domainlist blacklists/webmail/domains
+}
+
+acl {
+        default {
+                pass !adult !violence !audio-video !bank !bitcoin !blog !celebrity !chat !cleaning !cryptojacking !dangerous_material !dating !ddos !dialer !doh !download !drugs !fakenews !filehosting !forums !gambling !games !hacking !lingerie !malware !manga !marketingware !mixed_adult !phishing !redirector !remote-control !shopping !shortener !social_networks !stalkerware !vpn !warez !webmail all
+                redirect https://leekspin.co/
+        }
+}

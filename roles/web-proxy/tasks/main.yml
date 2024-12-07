@@ -1,0 +1,53 @@
+---
+
+- name: Ensure proxy software is installed
+  apt:
+    name:
+      - squid
+      - squidguard
+    state: present
+
+- name: Ensure squid is configured
+  template:
+    src: squid.conf.j2
+    dest: /etc/squid/conf.d/dezzanet.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart squid
+
+- name: Download blacklist
+  get_url:
+    dest: /var/lib/squidguard/blacklists.tar.gz
+    force: true
+    url: ftp://ftp.ut-capitole.fr/pub/reseau/cache/squidguard_contrib/blacklists.tar.gz
+  register: download_blacklist_result
+  when: false
+
+- name: Update blacklists
+  unarchive:
+    src: '/var/lib/squidguard/blacklists.tar.gz'
+    dest: "/var/lib/squidguard/db/"
+    remote_src: true
+    owner: proxy
+    group: proxy
+  when:
+    - download_blacklist_result is not skipped
+    - download_blacklist_result.changed
+    - download_blacklist_result.state is defined
+    - download_blacklist_result.state == 'file'
+  register: update_blacklist_result
+
+- name: Recompile database
+  when: update_blacklist_result.changed
+  shell:
+    cmd: "/usr/bin/squidGuard -C all"
+
+- name: Ensure squidguard is configured
+  template:
+    src: squidGuard.conf.j2
+    dest: /etc/squidguard/squidGuard.conf
+    owner: proxy
+    group: proxy
+    mode: 0640
+  notify: restart squid

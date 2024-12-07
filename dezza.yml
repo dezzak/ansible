@@ -68,3 +68,7 @@
     - software-development
     - iptables
     - sainsburys-workstation
+
+- hosts: web_proxies
+  roles:
+    - web-proxy
