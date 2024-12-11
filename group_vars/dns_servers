@@ -3,8 +3,8 @@ dns_forwarders:
   - 217.169.20.20
   - 217.169.20.21
 
-default_soa: "kimberly.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-default_zone_ns: "kimberly.internal.dezzanet.co.uk."
+default_soa: "dns1.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
+default_zone_ns: "dns1.internal.dezzanet.co.uk."
 blacklist_a: "192.168.99.99"
 blacklist_aaaa: "2001:8b0:caf4::99:99"
 blacklist_zones:
@@ -19,8 +19,8 @@ dns_zones:
   - name: "internal.dezzanet.co.uk"
     ttl: "604800"
     zone: "internal.dezzanet.co.uk"
-    soa: "kimberly.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2024112204"
+    soa: "dns1.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
+    serial: "2024120701"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -29,9 +29,9 @@ dns_zones:
       - name: ""
         entries:
           - type: "NS"
-            value: "kimberly.internal.dezzanet.co.uk."
+            value: "dns1.internal.dezzanet.co.uk."
           - type: "A"
-            value: "192.168.0.32"
+            value: "192.168.0.11"
     origin_records:
       - origin: "internal.dezzanet.co.uk."
         records:
@@ -40,7 +40,7 @@ dns_zones:
               - type: "A"
                 value: "192.168.0.11"
               - type: "AAAA"
-                value: "2001:8b0:caf4::be24:11ff:fe1a:46a8"
+                value: "2001:8b0:caf4::11"
           - name: "apt-cache-1"
             entries:
               - type: "A"
@@ -59,12 +59,6 @@ dns_zones:
                 value: "192.168.0.29"
               - type: "AAAA"
                 value: "2001:8b0:caf4::9eb6:54ff:fe09:32ca"
-          - name: "kimberly"
-            entries:
-              - type: "A"
-                value: "192.168.0.32"
-              - type: "AAAA"
-                value: "2001:8b0:caf4:0:ec4f:37ff:fe42:8337"
           - name: "matilda"
             entries:
               - type: "A"
@@ -176,8 +170,8 @@ dns_zones:
   - name: "192.168.0"
     ttl: "604800"
     zone: "0.168.192.in-addr.arpa"
-    soa: "kimberly.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2024112202"
+    soa: "dns1.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
+    serial: "2024120701"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -186,7 +180,7 @@ dns_zones:
       - name: ""
         entries:
           - type: "NS"
-            value: "kimberly.internal.dezzanet.co.uk."
+            value: "dns1.internal.dezzanet.co.uk."
     origin_records:
       - origin: "0.168.192.in-addr.arpa."
         records:
@@ -218,10 +212,6 @@ dns_zones:
             entries:
               - type: "PTR"
                 value: "work-laptop-wifi.internal.dezzanet.co.uk."
-          - name: "32"
-            entries:
-              - type: "PTR"
-                value: "kimberly.internal.dezzanet.co.uk."
           - name: "34"
             entries:
               - type: "PTR"

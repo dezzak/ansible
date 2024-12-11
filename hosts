@@ -5,7 +5,6 @@ all:
         henrietta.internal.dezzanet.co.uk:
           ansible_python_interpreter: auto
         jemima.internal.dezzanet.co.uk:
-        kimberly.internal.dezzanet.co.uk:
         matilda.internal.dezzanet.co.uk:
         dns1.internal.dezzanet.co.uk:
         apt-cache-1.internal.dezzanet.co.uk:
@@ -25,15 +24,12 @@ all:
       hosts:
         jemima.internal.dezzanet.co.uk:
         henrietta.internal.dezzanet.co.uk:
-        kimberly.internal.dezzanet.co.uk:
         matilda.internal.dezzanet.co.uk:
     apt_cache_servers:
       hosts:
-        kimberly.internal.dezzanet.co.uk:
         apt-cache-1.internal.dezzanet.co.uk:
     dns_servers:
       hosts:
-        kimberly.internal.dezzanet.co.uk:
         dns1.internal.dezzanet.co.uk:
     desktop:
       hosts:
