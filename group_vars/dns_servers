@@ -20,7 +20,7 @@ dns_zones:
     ttl: "604800"
     zone: "internal.dezzanet.co.uk"
     soa: "dns1.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2024120701"
+    serial: "2024121101"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -47,6 +47,10 @@ dns_zones:
                 value: "192.168.0.12"
               - type: "AAAA"
                 value: "2001:8b0:caf4::be24:11ff:fea7:37a5"
+          - name: "web-proxy-1"
+            entries:
+              - type: "A"
+                value: "192.168.0.13"
           - name: "henrietta"
             entries:
               - type: "A"
@@ -171,7 +175,7 @@ dns_zones:
     ttl: "604800"
     zone: "0.168.192.in-addr.arpa"
     soa: "dns1.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2024120701"
+    serial: "2024121101"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -192,6 +196,10 @@ dns_zones:
             entries:
               - type: "PTR"
                 value: "apt-cache-1.internal.dezzanet.co.uk."
+          - name: "13"
+            entries:
+              - type: "PTR"
+                value: "web-proxy-1.internal.dezzanet.co.uk."
           - name: "22"
             entries:
               - type: "PTR"

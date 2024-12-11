@@ -41,7 +41,7 @@
 - name: Recompile database
   when: update_blacklist_result.changed
   shell:
-    cmd: "/usr/bin/squidGuard -C all"
+    cmd: /usr/bin/squidGuard -C all
 
 - name: Ensure squidguard is configured
   template:
