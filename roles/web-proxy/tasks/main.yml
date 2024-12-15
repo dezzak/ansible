@@ -22,7 +22,6 @@
     force: true
     url: ftp://ftp.ut-capitole.fr/pub/reseau/cache/squidguard_contrib/blacklists.tar.gz
   register: download_blacklist_result
-  when: false
 
 - name: Update blacklists
   unarchive:
@@ -42,6 +41,15 @@
   when: update_blacklist_result.changed
   shell:
     cmd: /usr/bin/squidGuard -C all
+  notify: restart squid
+
+- name: Ensure correct permissions
+  file:
+    dest: /var/lib/squidguard/db
+    owner: proxy
+    group: proxy
+    recurse: yes
+  notify: restart squid
 
 - name: Ensure squidguard is configured
   template:

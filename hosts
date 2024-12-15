@@ -8,6 +8,7 @@ all:
         matilda.internal.dezzanet.co.uk:
         dns1.internal.dezzanet.co.uk:
         apt-cache-1.internal.dezzanet.co.uk:
+        web-proxy-1.internal.dezzanet.co.uk:
     print_servers:
       hosts:
         henrietta.internal.dezzanet.co.uk:
@@ -34,3 +35,6 @@ all:
     desktop:
       hosts:
         matilda.internal.dezzanet.co.uk:
+    web_proxies:
+      hosts:
+        web-proxy-1.internal.dezzanet.co.uk
