@@ -34,3 +34,5 @@
     mode=0644
 
 - import_tasks: journald.yml
+- import_tasks: network.yml
+  when: core_network.static_ipv6

@@ -4,3 +4,8 @@
   service:
     name=systemd-journald
     state=restarted
+
+- name: restart network
+  service:
+    name: systemd-networkd
+    state: restarted

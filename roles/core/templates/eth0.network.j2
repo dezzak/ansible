@@ -1,0 +1,12 @@
+[Match]
+Name=eth0
+
+[Network]
+DHCP=true
+Address={{ core_network.static_ipv6 }}
+
+[DHCPv4]
+UseDomains=true
+
+[DHCP]
+ClientIdentifier=mac

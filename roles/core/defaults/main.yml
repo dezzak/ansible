@@ -2,3 +2,5 @@
 
 journald_settings:
   system_max_use: "200M"
+core_network:
+  static_ipv6: false
