@@ -7,8 +7,6 @@
       - chromium
       - chromium-sandbox
       - thunderbird
-      - kmymoney
-      - oxygen-icon-theme # for kmymoney --- move to own role
       - evince
       - libreoffice
       - hyphen-en-gb

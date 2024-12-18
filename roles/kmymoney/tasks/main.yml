@@ -1,0 +1,8 @@
+---
+
+- name: Ensure application packages are installed
+  apt:
+    name:
+      - kmymoney
+      - oxygen-icon-theme
+    state: present
