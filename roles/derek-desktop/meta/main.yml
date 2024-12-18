@@ -19,3 +19,4 @@ dependencies:
   - marked-register-processing
   - osm-edit
   - kmymoney
+  - libreoffice

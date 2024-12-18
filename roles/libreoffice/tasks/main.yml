@@ -1,0 +1,8 @@
+---
+
+- name: Ensure application packages are installed
+  apt:
+    name:
+      - libreoffice
+      - hyphen-en-gb
+    state: present
