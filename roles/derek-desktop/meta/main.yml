@@ -15,8 +15,7 @@ galaxy_info:
 
 dependencies:
   - zoom
-  - keepass2
   - marked-register-processing
   - osm-edit
   - kmymoney
-  - libreoffice
+  - generic-desktop

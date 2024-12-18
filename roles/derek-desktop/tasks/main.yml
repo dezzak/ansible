@@ -7,9 +7,6 @@
       - redshift-gtk
       - lightdm
       - network-manager-gnome
-      - fonts-dejavu
-      - tumbler-plugins-extra
-      - gnome-keyring
       - gnome-themes-extra
     state: present
 
@@ -18,7 +15,6 @@
     name: ['texlive-full']
     state: present
 
-- import_tasks: generic-applications.yml
 - import_tasks: scan-client.yml
 - import_tasks: print-client.yml
 - import_tasks: cron.yml

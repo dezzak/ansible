@@ -1,0 +1,11 @@
+---
+
+- name: Ensure desktop environment packages installed
+  apt:
+    name: 
+      - fonts-dejavu
+      - tumbler-plugins-extra
+      - gnome-keyring
+    state: present
+
+- import_tasks: generic-applications.yml
