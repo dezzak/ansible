@@ -18,4 +18,3 @@
 - import_tasks: scan-client.yml
 - import_tasks: print-client.yml
 - import_tasks: cron.yml
-- import_tasks: family-history.yml
