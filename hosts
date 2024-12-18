@@ -32,7 +32,7 @@ all:
     dns_servers:
       hosts:
         dns1.internal.dezzanet.co.uk:
-    desktop:
+    derek_desktop:
       hosts:
         matilda.internal.dezzanet.co.uk:
     web_proxies:

@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: desktop
+  role_name: derek-desktop
   author: Derek Kaye
   description: Common desktop software I use
   license: GPLv3

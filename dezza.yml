@@ -58,13 +58,13 @@
   roles:
     - dns-server
 
-- hosts: desktop
+- hosts: derek_desktop
   become: yes
   become_method: sudo
   roles:
     - backup-client
     - media-client
-    - desktop
+    - derek-desktop
     - software-development
     - iptables
     - sainsburys-workstation
