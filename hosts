@@ -38,3 +38,6 @@ all:
     web_proxies:
       hosts:
         web-proxy-1.internal.dezzanet.co.uk
+    flexget:
+      hosts:
+        flexget-1.internal.dezzanet.co.uk

@@ -16,7 +16,7 @@
     name: transmission-rpc
     state: present
     version: 4.3.1
-    virtualenv: "{{ venv_home }}"
+    virtualenv: "{{ flexget.venv_home }}"
     virtualenv_site_packages: true
   notify: restart flexget
 
@@ -24,9 +24,16 @@
   pip:
     name: flexget
     state: present
-    virtualenv: "{{ venv_home }}"
+    virtualenv: "{{ flexget.venv_home }}"
     virtualenv_site_packages: true
   notify: restart flexget
+
+- name: Ensure that flexget user exists
+  user:
+    name: "{{ flexget.user }}"
+    state: present
+    create_home: true
+    system: true
 
 - name: Ensure that defaults file is set
   template:

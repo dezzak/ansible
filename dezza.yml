@@ -28,7 +28,6 @@
     - media-servers
     - samba
     - transmission
-    - flexget
     - media-clamscan
     - tv-management
     - get-iplayer
@@ -72,3 +71,7 @@
 - hosts: web_proxies
   roles:
     - web-proxy
+
+- hosts: flexget
+  roles:
+    - flexget

@@ -1,3 +1,5 @@
 ---
 
-venv_home: '/usr/local/bin/flexget/'
+flexget:
+  user: flexget
+  venv_home: '/usr/local/bin/flexget/'

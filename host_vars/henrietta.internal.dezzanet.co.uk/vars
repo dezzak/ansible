@@ -66,9 +66,6 @@ transmission:
   rpc_password_plain: "{{ vault_transmission_rpc_password_plain }}"
   rpc_whitelist: "127.0.0.1,{{ localnet_ipv4_wild }},{{ localnet_ipv6_wild }}"
 
-flexget:
-  user: dezza
-
 clamav:
   scandir: "{{ media_root_dir }}"
 
