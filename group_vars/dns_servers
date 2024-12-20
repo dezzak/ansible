@@ -20,7 +20,7 @@ dns_zones:
     ttl: "604800"
     zone: "internal.dezzanet.co.uk"
     soa: "dns1.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2024121902"
+    serial: "2024122001"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -183,6 +183,10 @@ dns_zones:
             entries:
               - type: "CNAME"
                 value: "web-proxy-1.internal.dezzanet.co.uk."
+          - name: "transmission"
+            entries:
+              - type: "CNAME"
+                value: "henrietta.internal.dezzanet.co.uk."
   - name: "192.168.0"
     ttl: "604800"
     zone: "0.168.192.in-addr.arpa"
