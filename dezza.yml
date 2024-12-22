@@ -75,3 +75,14 @@
 - hosts: flexget
   roles:
     - flexget
+
+- hosts: arthur_desktop
+  become: yes
+  become_method: sudo
+  environment:
+    http_proxy: http://web-proxy.internal.dezzanet.co.uk:3128
+    https_proxy: http://web-proxy.internal.dezzanet.co.uk:3128
+  roles:
+    - proxy-client
+    - generic-desktop
+    - iptables

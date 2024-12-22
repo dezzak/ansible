@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# {{ ansible_managed }}
+
+export http_proxy=http://{{ proxy_client.proxy_host }}:{{ proxy_client.proxy_port }}
+export https_proxy=https://{{ proxy_client.proxy_host }}:{{ proxy_client.proxy_port }}
+export HTTP_PROXY=http://{{ proxy_client.proxy_host }}:{{ proxy_client.proxy_port }}
+export HTTPS_PROXY=https://{{ proxy_client.proxy_host }}:{{ proxy_client.proxy_port }}

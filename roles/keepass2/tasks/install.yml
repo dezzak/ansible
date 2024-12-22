@@ -25,6 +25,7 @@
     dest: '/usr/lib/keepass2/Plugins/KeePassHttp.plgx'
     mode: 0644
     src: '/tmp/KeePassHttp.plgx'
+    remote_src: true
   when:
     - download_result is not skipped
     - download_result.state is defined

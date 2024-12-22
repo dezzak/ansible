@@ -20,7 +20,7 @@ dns_zones:
     ttl: "604800"
     zone: "internal.dezzanet.co.uk"
     soa: "dns1.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2024122001"
+    serial: "2024122201"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -59,6 +59,10 @@ dns_zones:
                 value: "192.168.0.14"
               - type: "AAAA"
                 value: "2001:8b0:caf4::14"
+          - name: "arthur"
+            entries:
+              - type: "A"
+                value: "192.168.0.20"
           - name: "henrietta"
             entries:
               - type: "A"

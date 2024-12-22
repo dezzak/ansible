@@ -1,0 +1,28 @@
+---
+
+- name: Ensure environment variables are correctly configured
+  template:
+    src: proxy.sh.j2
+    dest: /etc/profile.d/proxy.sh
+    group: root
+    owner: root
+    mode: 0644
+
+- name: Ensure git is configured for root
+  template:
+    src: gitconfig.j2
+    dest: /root/.gitconfig
+    group: root
+    owner: root
+    mode: 0644
+
+- name: Ensure /etc/envionment correctly set
+  with_items:
+    - http_proxy
+    - https_proxy
+    - HTTP_PROXY
+    - HTTPS_PROXY
+  lineinfile:
+    line: "{{ item }}=http://{{ proxy_client.proxy_host }}:{{ proxy_client.proxy_port }}"
+    regexp: "^{{ item }}="
+    path: /etc/environment

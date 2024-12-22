@@ -1,0 +1,3 @@
+---
+core_network:
+  static_ipv6: "2001:8b0:caf4::20/64"

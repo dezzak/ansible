@@ -9,6 +9,8 @@ all:
         dns1.internal.dezzanet.co.uk:
         apt-cache-1.internal.dezzanet.co.uk:
         web-proxy-1.internal.dezzanet.co.uk:
+        flexget-1.internal.dezzanet.co.uk:
+        arthur.internal.dezzanet.co.uk:
     print_servers:
       hosts:
         henrietta.internal.dezzanet.co.uk:
@@ -41,3 +43,6 @@ all:
     flexget:
       hosts:
         flexget-1.internal.dezzanet.co.uk
+    arthur_desktop:
+      hosts:
+        arthur.internal.dezzanet.co.uk

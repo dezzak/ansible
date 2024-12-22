@@ -5,3 +5,7 @@ localnet_ipv4_gateway: '192.168.0.6'
 localnet_ipv6_cidr: '2001:8b0:caf4::/64'
 localnet_ipv6_cidr_s: '[2001:8b0:caf4::]/64'
 localnet_ipv6_wild: '2001:8b0:caf4:*'
+
+proxy_client:
+  proxy_host: "web-proxy.internal.dezzanet.co.uk"
+  proxy_port: "3128"

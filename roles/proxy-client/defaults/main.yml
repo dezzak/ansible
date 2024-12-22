@@ -1,0 +1,5 @@
+---
+
+proxy_client:
+  proxy_host: "proxy"
+  proxy_port: "3128"
