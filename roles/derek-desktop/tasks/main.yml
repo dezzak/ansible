@@ -3,8 +3,6 @@
 - name: Ensure desktop environment packages installed
   apt:
     name: 
-      - redshift
-      - redshift-gtk
       - lightdm
       - network-manager-gnome
       - gnome-themes-extra

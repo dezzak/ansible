@@ -14,3 +14,4 @@ galaxy_info:
 dependencies:
   - keepass2
   - libreoffice
+  - redshift

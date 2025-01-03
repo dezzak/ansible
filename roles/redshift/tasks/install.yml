@@ -1,0 +1,17 @@
+---
+
+- name: Ensure redshift is installed
+  apt:
+    name:
+      - redshift
+      - redshift-gtk
+    state: present
+
+- name: Set up configuration
+  template:
+    src: redshift.conf.j2
+    dest: "/home/{{ item }}/.config/redshift.conf"
+    owner: "{{ item }}"
+    group: "{{ item }}"
+    mode: 0644
+  with_items: "{{ redshift.users }}"

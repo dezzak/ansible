@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  role_name: keepass2
+  role_name: redshift
   author: Derek Kaye
-  description: Allows keepass2 and plugins to be installed
+  description: Allows redshift to be installed
   license: GPLv3
   min_ansible_version: 2.7
 
