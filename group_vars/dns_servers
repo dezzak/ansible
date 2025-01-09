@@ -20,7 +20,7 @@ dns_zones:
     ttl: "604800"
     zone: "internal.dezzanet.co.uk"
     soa: "dns1.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2024122201"
+    serial: "2025010901"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -59,6 +59,10 @@ dns_zones:
                 value: "192.168.0.14"
               - type: "AAAA"
                 value: "2001:8b0:caf4::14"
+          - name: "pia"
+            entries:
+              - type: "A"
+                value: "192.168.0.15"
           - name: "arthur"
             entries:
               - type: "A"
@@ -195,7 +199,7 @@ dns_zones:
     ttl: "604800"
     zone: "0.168.192.in-addr.arpa"
     soa: "dns1.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2024121901"
+    serial: "2025010901"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -224,6 +228,10 @@ dns_zones:
             entries:
               - type: "PTR"
                 value: "flexget-1.internal.dezzanet.co.uk."
+          - name: "15"
+            entries:
+              - type: "PTR"
+                value: "pia.internal.dezzanet.co.uk."
           - name: "22"
             entries:
               - type: "PTR"
