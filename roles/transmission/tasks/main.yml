@@ -21,3 +21,17 @@
     line: "ExecStart=/usr/bin/transmission-daemon -f --log-error -g /etc/transmission-daemon"
   notify:
     - restart transmission
+
+- name: Ensure transmission client user is set up
+  user:
+    name: "{{ transmission.client_user }}"
+    state: present
+    create_home: true
+    system: true
+
+- name: Set up authorized keys for transmission client
+  ansible.posix.authorized_key:
+    user: "{{ transmission.client_user }}"
+    state: present
+    key: "{{ item }}"
+  with_items: "{{ transmission.client_keys }}"

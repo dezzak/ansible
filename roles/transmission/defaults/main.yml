@@ -1,0 +1,10 @@
+---
+
+transmission:
+  client_user: "transmission-client"
+  download_dir: "/srv/torrents"
+  incomplete_dir: "/srv/torrents/incomplete"
+  rpc_password: "changeme"
+  rpc_password_plain: "changeme"
+  rpc_whitelist: "127.0.0.1"
+  client_keys: []

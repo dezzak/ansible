@@ -60,11 +60,14 @@ samba:
       writable: "no"
 
 transmission:
+  client_user: "dezza"
   download_dir: "{{ media_root_dir }}/torrents"
   incomplete_dir: "{{ media_root_dir }}/torrents/incomplete"
   rpc_password: "{{ vault_transmission_rpc_password }}"
   rpc_password_plain: "{{ vault_transmission_rpc_password_plain }}"
   rpc_whitelist: "127.0.0.1,{{ localnet_ipv4_wild }},{{ localnet_ipv6_wild }}"
+  client_keys:
+    - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDf32UTkNF4QXuRlGCEhyngto2Z2SGR2byDu1B0zyQLSllU9jCiF1oad4kSmliNRDmSrtm+y8qD9pCxwj3oIHKxrKnvyJFJvmsFW/Iw++wWaPKCDCsVV+YCrUgdfUtWSyhazXuSUmDeLH1wQjFUoB39cbdziT5aisYYXhrf6055kofu3PglwcJ89JFiqQUds1j1CpHsNvQ2f80vv0NJjVSLaGy1MDfcVloz5HdYrmr8DHKfwGRdM0DL+lfmd7nK2bBbUVJgQ8QTdozocVlsxcfaL1m35weJOk6iqAoNSXnexFxWyoRAYx+sXwr4pg/vNX08YMR8af31g3uP8t5WZkl1 dezza@henrietta"
 
 clamav:
   scandir: "{{ media_root_dir }}"
