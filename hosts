@@ -11,6 +11,7 @@ all:
         web-proxy-1.internal.dezzanet.co.uk:
         flexget-1.internal.dezzanet.co.uk:
         arthur.internal.dezzanet.co.uk:
+        pia.internal.dezzanet.co.uk:
     print_servers:
       hosts:
         henrietta.internal.dezzanet.co.uk:
