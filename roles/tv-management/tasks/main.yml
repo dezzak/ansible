@@ -7,6 +7,7 @@
       - git
       - cpanminus
       - postfix
+      - sshfs
     state: present
 
 - name: Ensure cpan dependencies are installed
@@ -20,6 +21,14 @@
   git:
     dest={{ tv_management.install_dir }}
     repo='https://github.com/dezzak/tv-management.git'
+
+- name: Mount transmission directory
+  ansible.posix.mount:
+    src: "{{ tv_management.transmission_mount_src }}"
+    path: "{{ tv_management.transmission_mount_point }}"
+    fstype: sshfs
+    state: mounted
+    opts: "x-systemd.automount,_netdev,reconnect,identityfile={{ tv_management.ssh_key_path }},allow_other,default_permissions"
 
 - name: Ensure config present
   template:

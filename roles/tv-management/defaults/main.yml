@@ -2,3 +2,8 @@
 tv_management_user: dezza
 tv_management_group: dezza
 transmission_group: debian-transmission
+tv_management:
+  install_dir: "/usr/local/bin/tv-management"
+  transmission_mount_src: "dezza@localhost:/media/media/media/media/torrents"
+  transmission_mount_point: "/media/transmission"
+  ssh_key_path: "/home/dezza/.ssh/id_rsa"
