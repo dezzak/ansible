@@ -74,7 +74,9 @@ clamav:
 
 tv_management:
   install_dir: "/usr/local/bin/tv-management"
-  transmission_mount_src: "dezza@localhost:/media/media/media/media/torrents"
+  remote_transmission_path: "/media/media/media/media/torrents"
+  remote_transmission_mount_user: "dezza"
+  remote_transmission_host: "transmission.internal.dezzanet.co.uk"
   transmission_mount_point: "/media/transmission"
   ssh_key_path: "/home/dezza/.ssh/id_rsa"
 

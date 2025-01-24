@@ -6,8 +6,9 @@ iplayer_dir={{ media_root_dir }}/iplayer
 file_permissions=0640
 
 [transmission]
-rpc_url=http://localhost:9091/transmission/rpc
+rpc_url=http://{{ tv_management.remote_transmission_host }}:9091/transmission/rpc
 rpc_username=transmission
 rpc_password={{ transmission.rpc_password_plain }}
 rpc_timeout=5
-
+remote_mount_base={{ tv_management.remote_transmission_path }}
+local_mount_base={{ tv_management.transmission_mount_point }}

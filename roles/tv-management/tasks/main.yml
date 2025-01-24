@@ -24,7 +24,7 @@
 
 - name: Mount transmission directory
   ansible.posix.mount:
-    src: "{{ tv_management.transmission_mount_src }}"
+    src: "{{ tv_management.remote_transmission_mount_user }}@{{ tv_management.remote_transmission_host }}:{{ tv_management.remote_transmission_path }}"
     path: "{{ tv_management.transmission_mount_point }}"
     fstype: sshfs
     state: mounted
