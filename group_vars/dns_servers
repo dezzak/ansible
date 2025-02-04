@@ -65,6 +65,10 @@ dns_zones:
                 value: "192.168.0.15"
               - type: "AAAA"
                 value: "2001:8b0:caf4::15"
+          - name: "haos2"
+            entries:
+              - type: "A"
+                value: "192.168.0.16"
           - name: "arthur"
             entries:
               - type: "A"

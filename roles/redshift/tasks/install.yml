@@ -7,11 +7,38 @@
       - redshift-gtk
     state: present
 
+- name: Ensure config directory present
+  file:
+    path: "/home/{{ item }}/.config"
+    state: directory
+    owner: "{{ item }}"
+    group: "{{ item }}"
+    mode: 0700
+  with_items: "{{ redshift.users }}"
+
 - name: Set up configuration
   template:
     src: redshift.conf.j2
     dest: "/home/{{ item }}/.config/redshift.conf"
     owner: "{{ item }}"
     group: "{{ item }}"
-    mode: 0644
+    mode: 0600
+  with_items: "{{ redshift.users }}"
+
+- name: Ensure autostart directory present
+  file:
+    path: "/home/{{ item }}/.config/autostart"
+    state: directory
+    owner: "{{ item }}"
+    group: "{{ item }}"
+    mode: 0700
+  with_items: "{{ redshift.users }}"
+
+- name: Set up autostart
+  copy:
+    src: "redshift-gtk.desktop"
+    dest: "/home/{{ item }}/.config/autostart/redshift-gtk.desktop"
+    owner: "{{ item }}"
+    group: "{{ item }}"
+    mode: "0600"
   with_items: "{{ redshift.users }}"
