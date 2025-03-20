@@ -20,7 +20,7 @@ dns_zones:
     ttl: "604800"
     zone: "internal.dezzanet.co.uk"
     soa: "dns1.internal.dezzanet.co.uk. root.internal.dezzanet.co.uk."
-    serial: "2025012201"
+    serial: "2025032001"
     refresh: "604800"
     retry: "86400"
     expire: "2419200"
@@ -181,10 +181,8 @@ dns_zones:
                 value: "192.168.0.77"
           - name: "homeassistant"
             entries:
-              - type: "A"
-                value: "192.168.0.164"
-              - type: "AAAA"
-                value: "2001:8b0:caf4:0:daa6:79bc:92e:c7ac"
+              - type: "CNAME"
+                value: "haos2.internal.dezzanet.co.uk."
           - name: "osmc"
             entries:
               - type: "CNAME"
